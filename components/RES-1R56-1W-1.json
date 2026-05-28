@@ -1,0 +1,34 @@
+{
+  "componente": {
+    "part_number": "RES-1R56-1W-1",
+    "fabricante_original": "Genérico / Industrial de Precisão",
+    "categoria": "Componentes Passivos / Resistores",
+    "subcategoria": "Resistor de Filme Metálico de Baixa Impedância (Shunt)",
+    "tipo_montagem": "PTH (Through-Hole / Terminal Axial)",
+    "estado": "Novo (Excedente de lote)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "unidades",
+    "caixa": "1",
+    "local": "B1"
+  },
+  "especificacoes_tecnicas": {
+    "valor_nominal": 1.56,
+    "unidade_resistencia": "Ohms",
+    "tolerancia_percentual": 1.0,
+    "potencia_estimada_dissipacao": "1W a 2W (Baseado no diâmetro robusto do corpo)",
+    "sequencia_cores_oficial": [
+      "Marrom (1)",
+      "Verde (5)",
+      "Azul (6)",
+      "Prata (x0.01)",
+      "Marrom (±1%)"
+    ]
+  },
+  "aplicacoes_comuns": [
+    "Sensor de corrente (Current Sensing) em fontes chaveadas",
+    "Circuitos de proteção contra sobrecorrente",
+    "Estágios de filtragem e casamento de impedância de baixa assinatura"
+  ]
+}

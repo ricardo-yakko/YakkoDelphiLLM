@@ -1,0 +1,40 @@
+{
+  "componente": {
+    "part_number": "MURF2060CT",
+    "fabricante_original": "SMC Diode Solutions (SSG)",
+    "categoria": "Semicondutores / Diodos",
+    "subcategoria": "Diodo de Recuperação Ultra-Rápida Duplo (Ultra-Fast)",
+    "configuracao_interna": "Catodo Comum (Common Cathode)",
+    "encapsulamento": "ITO-220AB (Full-Pack totalmente isolado de 3 pinos)",
+    "estado": "Novo (Excedente de lote industrial / Stock antigo)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "unidades",
+    "caixa": "1",
+    "local": "A1"
+  },
+  "especificacoes_tecnicas_datasheet": {
+    "tensao_maxima_reversa_vrm": 600.0,
+    "unidade_tensao": "Volts",
+    "corrente_maxima_total_io": 20.0,
+    "corrente_por_diodo_interno": 10.0,
+    "unidade_corrente": "Amperes",
+    "tempo_recuperacao_reversa_trr_max": 50.0,
+    "unidade_tempo_recuperacao": "nanossegundos (ns)",
+    "temperatura_maxima_de_juncao_tj": 150.0,
+    "unidade_temperatura": "Graus Celsius"
+  },
+  "pinagem_oficial": {
+    "pino_1": "Anodo 1 (Entrada de Sinal / Fase 1)",
+    "pino_2": "Catodo Comum (Saída Positiva +DC / Pino Central)",
+    "pino_3": "Anodo 2 (Entrada de Sinal / Fase 2)"
+  },
+  "caracteristicas_de_projeto": {
+    "recursos": [
+      "Tempo de recuperação reversa ultra-rápido para máxima eficiência em alta frequência",
+      "Alta capacidade de corrente de surto direto (Surge Current)",
+      "Encapsulamento isolado de fábrica que otimiza o espaço físico e a segurança no dissipador"
+    ]
+  }
+}

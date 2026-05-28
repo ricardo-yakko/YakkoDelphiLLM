@@ -1,0 +1,34 @@
+{
+  "componente": {
+    "part_number": "TB-001-KAPTON",
+    "fabricante_original": "TEC BIG (Expert Technology)",
+    "categoria": "Ferramentas e Consumíveis / Insumos de Reparo",
+    "subcategoria": "Fita de Poliamida de Alta Temperatura (Tipo Kapton)",
+    "tipo_material": "Filme de Poliamida com Adesivo de Silicone",
+    "estado": "Novo (Na embalagem)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "rolo",
+    "caixa": "1",
+    "local": "Gaveteiro de Consumíveis / Fitas de Blindagem e Proteção Térmica"
+  },
+  "especificacoes_tecnicas_pesquisadas": {
+    "modelo_comercial": "TB-001 / Isolamento Térmico",
+    "cor_do_filme": "Âmbar / Dourado Translúcido",
+    "resistencia_termica_continua": "Até 260°C",
+    "resistencia_termica_pico": "Até 300°C / 400°C (Curta duração)",
+    "tipo_de_adesivo": "Silicone de alta performance (No-Clean / Sem resíduos após remoção)",
+    "propriedades_fisicas": [
+      "Excelente isolamento elétrico (Alta rigidez dielétrica)",
+      "Resistência química a solventes e fluxos de solda",
+      "Não deforma e não propaga chamas sob o calor do soprador de ar quente"
+    ]
+  },
+  "aplicacoes_obrigatorias_na_bancada": [
+    "Proteção e isolamento térmico de componentes periféricos plásticos (conectores FPC, slots de memória, botões) durante o uso do soprador térmico",
+    "Blindagem de circuitos integrados vizinhos ao chip que receberá o Reflow/Reballing",
+    "Isolamento elétrico interno em packs de baterias de lítio e transformadores chopper",
+    "Fixação de termopares/sensores de temperatura diretamente nas placas durante o perfilamento térmico de estações BGA"
+  ]
+}

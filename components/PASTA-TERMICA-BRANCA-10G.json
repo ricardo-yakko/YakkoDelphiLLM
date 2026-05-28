@@ -1,0 +1,37 @@
+{
+  "componente": {
+    "part_number": "PASTA-TERMICA-BRANCA-10G",
+    "sku_etiqueta": "9984",
+    "codigo_barras_distribuidora": "WCNJ71280",
+    "descricao_comercial": "Pasta Térmica Branca 10g Implastec Bisnaga - Série Conector IT-BLUE",
+    "fabricante_original": "Implastec",
+    "embalador_distribuidor": "IT-BLUE / Lbl Distribuidora",
+    "categoria": "Ferramentas e Consumíveis / Química e Soldagem",
+    "subcategoria": "Pasta Térmica / Insumo de Dissipação",
+    "estado": "Novo (Embalagem de proteção lacrada)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "bisnaga",
+    "peso_liquido": "10g",
+    "data_fabricacao": "2026-02",
+    "validade_meses": 36,
+    "data_expiracao": "2029-02",
+    "caixa": "1",
+    "local": "Gaveteiro de Consumíveis / Químicos, Fluxos e Soldas"
+  },
+  "especificacoes_tecnicas_pesquisadas": {
+    "composicao_base": "Silicone aditivado com óxidos metálicos",
+    "cor": "Branca",
+    "condutividade_termica_estimada": "> 0.4 W/mK",
+    "exsudacao": "< 0.5%",
+    "temperatura_trabalho_continua": "-40°C a 200°C",
+    "solubilidade": "Insolúvel em água (Pode ser limpa com Álcool Isopropílico)"
+  },
+  "aplicacoes_comuns": [
+    "Montagem de transistores de potência (módulos MOSFET, IGBT, encapsulamentos TO-220, TO-3)",
+    "Acoplamento térmico de pastilhas Peltier e resistências de aquecimento",
+    "Reparo em fontes chaveadas, inversores de frequência e drivers de motores",
+    "Manutenção de processadores convencionais, consoles e chipsets que não exijam compostos de base prata/cerâmica de altíssimo desempenho"
+  ]
+}

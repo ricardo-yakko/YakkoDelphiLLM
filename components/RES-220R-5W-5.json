@@ -1,0 +1,29 @@
+{
+  "componente": {
+    "part_number": "RES-220R-5W-5",
+    "fabricante_original": "Genérico / Industrial",
+    "categoria": "Componentes Passivos / Resistores",
+    "subcategoria": "Resistor de Fio (Wirewound)",
+    "tipo_montagem": "PTH (Through-Hole / Terminal Axial)",
+    "estado": "Novo (Excedente de lote)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "unidades",
+    "caixa": "1",
+    "local": "B1"
+  },
+  "especificacoes_tecnicas": {
+    "valor_nominal": 220.0,
+    "unidade_resistencia": "Ohms (220R)",
+    "tolerancia_percentual": 5.0,
+    "potencia_maxima_dissipacao": 5.0,
+    "unidade_potencia": "Watts (W)",
+    "faixa_valores_aceitaveis_multimetro": "209.0 a 231.0 Ohms"
+  },
+  "aplicacoes_comuns": [
+    "Circuitos de descarga de capacitores de alta tensão (Bleeder)",
+    "Limitador de corrente de partida em fontes de alimentação (Inrush Current)",
+    "Carga fantasma de baixa potência para testes de bancada"
+  ]
+}

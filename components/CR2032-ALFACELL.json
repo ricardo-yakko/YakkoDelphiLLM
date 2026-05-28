@@ -1,0 +1,42 @@
+{
+  "componente": {
+    "part_number": "CR2032-ALFACELL",
+    "nome_comum": "Bateria de Lítio Botão CR2032",
+    "marca": "Alfacell",
+    "modelo_codigo": "CR2032 / CR2032C2",
+    "fabricante_original": "Alfacell",
+    "categoria": "Fontes de Alimentação e Componentes / Baterias e Pilhas",
+    "subcategoria": "Baterias Tipo Botão / Moeda (Coin Cell)",
+    "estado": "Novo (Lacrado na Embalagem Original)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 2,
+    "unidade_medida": "unidades (1 cartela com 2 pilhas)",
+    "validade_lote": "1.2027",
+    "caixa": "1",
+    "local": "Organizador de Componentes / Gaveteiro de Pilhas e Baterias Botão"
+  },
+  "especificacoes_tecnicas": {
+    "quimica_base": "Dióxido de Manganês / Lítio (Li/MnO2)",
+    "tensao_nominal": "3.0 V",
+    "capacidade_nominal": "210 mAh",
+    "dimensoes_padrao": "20mm de diâmetro x 3.2mm de espessura (daí o código '2032')"
+  },
+  "composicao_quimica_detalhada": {
+    "aco_inoxidavel": "50,5%",
+    "dioxido_de_manganes": "30,99%",
+    "perclorato_de_litio": "4,00%",
+    "polipropileno": "3,76%",
+    "carbonato_de_propanodiolciclico": "3,00%",
+    "resina_de_politetrafluoretileno": "2,17%",
+    "grafite": "2,17%",
+    "litio": "1,91%",
+    "eter_dimetilico_de_etileno_glicol": "1,50%",
+    "observacao_ambiental": "Fórmula livre de Mercúrio (Hg) e Cádmio (Cd)"
+  },
+  "aplicacoes_comuns_bancada": [
+    "Alimentação do circuito de RTC (Real Time Clock / CMOS) e preservação da BIOS em placas-mãe de PCs, notebooks e shields de expansão para Arduino/ESP32",
+    "Substituição de bateria em chaves presenciais automotivas, alarmes, calculadoras e agendas eletrônicas",
+    "Alimentação de mini dispositivos eletrônicos de consumo, como controles remotos IR de fitas LED, óculos ativos 3D, balanças de precisão e brinquedos eletrônicos portáteis"
+  ]
+}

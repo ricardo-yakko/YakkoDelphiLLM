@@ -1,0 +1,42 @@
+{
+  "componente": {
+    "part_number": "KA2131",
+    "fabricante_original": "Samsung",
+    "categoria": "Circuitos Integrados / Semicondutores",
+    "subcategoria": "Amplificador de Deflexão Vertical Monolítico",
+    "encapsulamento": "SIP-9-H (Single In-line com aba de metal)",
+    "estado": "Novo (Excedente de lote industrial / Stock antigo)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "unidades",
+    "caixa": "1",
+    "local": "A1"
+  },
+  "especificacoes_tecnicas_datasheet": {
+    "tensao_maxima_de_alimentacao_vcc": 30.0,
+    "tensao_de_pico_no_estagio_flyback": 60.0,
+    "corrente_maxima_de_saida_io_pico": 2.0,
+    "unidade_corrente": "Amperes",
+    "potencia_maxima_dissipada_pd": 15.0,
+    "unidade_potencia": "Watts (com dissipador externo)",
+    "temperatura_de_operacao_topr": "-20 a +75",
+    "unidade_temperatura": "Graus Celsius",
+    "recursos_internos": [
+      "Circuito gerador de pulso flyback integrado",
+      "Estágio de saída de alta corrente",
+      "Excelente linearidade de rampa de corrente"
+    ]
+  },
+  "pinagem_oficial": {
+    "pino_1": "GND (Terra)",
+    "pino_2": "Saída Vertical (Vertical Output)",
+    "pino_3": "Alimentação do Estágio de Saída (Flyback VCC)",
+    "pino_4": "Entrada de Sinal (Input)",
+    "pino_5": "Controle de Oscilação / Trigger",
+    "pino_6": "Ajuste de Fase / Realimentação",
+    "pino_7": "Alimentação Geral VCC (Estágio Inicial)",
+    "pino_8": "Gerador de Rampa (Ramp Generator)",
+    "pino_9": "Filtro / Desacoplamento"
+  }
+}

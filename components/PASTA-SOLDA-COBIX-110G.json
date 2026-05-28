@@ -1,0 +1,24 @@
+{
+  "componente": {
+    "part_number": "PASTA-SOLDA-COBIX-110G",
+    "descricao_comercial": "Pasta para Soldar Cobix Pote 110g Química de Soldagem",
+    "fabricante_original": "Cobix",
+    "categoria": "Ferramentas e Consumíveis / Química e Soldagem",
+    "subcategoria": "Pasta de Soldar Química",
+    "estado": "Novo / Pote em uso"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "pote",
+    "peso_liquido_real": "110g",
+    "caixa": "1",
+    "local": "Prateleira de Químicos / Pastas e Fluxos de Solda Pesada"
+  },
+  "especificacoes_tecnicas": {
+    "conformidade_normas": [
+      "ABNT-NBR 15156",
+      "ASTM-B828"
+    ],
+    "funcao_principal": "Decapante químico de alta eficiência para remoção de óxidos e auxílio de molhabilidade em ligas de estanho"
+  }
+}

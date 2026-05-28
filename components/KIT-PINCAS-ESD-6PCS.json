@@ -1,0 +1,58 @@
+{
+  "componente": {
+    "part_number": "KIT-PINCAS-ESD-6PCS",
+    "descricao_comercial": "Kit de Pinças de Precisão Anti-Estática ESD - Jogo com 6 Peças",
+    "fabricante_original": "Exbom / Genérico Industrial",
+    "categoria": "Ferramentas de Bancada / Acessórios de Manutenção",
+    "subcategoria": "Pinças de Precisão Magnética e Proteção ESD",
+    "estado": "Novo (Na embalagem blister original)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "kit",
+    "caixa": "1",
+    "local": "Painel de Ferramentas / Gaveta de Ferramentas Manuais de Precisão"
+  },
+  "especificacoes_tecnicas": {
+    "material_base": "Aço Inoxidável de alta elasticidade e resistência mecânica",
+    "revestimento_corpo": "Pintura epóxi condutiva preta (Dissipadora de estática / ESD Safe)",
+    "propriedades_magneticas": "Não-magnéticas (Evita que parafusos SMD e componentes grudem na ponta)",
+    "modelos_inclusos_no_jogo": [
+      {
+        "modelo": "ESD-10",
+        "tipo_ponta": "Reta padrão, curta (122mm)",
+        "aplicacao": "Manipulação geral de componentes em PCBs"
+      },
+      {
+        "modelo": "ESD-11",
+        "tipo_ponta": "Reta, extra longa e fina (140mm)",
+        "aplicacao": "Trabalho em circuitos densos e locais de difícil acesso"
+      },
+      {
+        "modelo": "ESD-12",
+        "tipo_ponta": "Reta, robusta com ponta fina (135mm)",
+        "aplicacao": "Segurar componentes maiores que exigem mais pressão"
+      },
+      {
+        "modelo": "ESD-13",
+        "tipo_ponta": "Reta com ponta chata/arredondada (122mm)",
+        "aplicacao": "Manipulação de componentes sensíveis a arranhões (chips, cristais)"
+      },
+      {
+        "modelo": "ESD-14",
+        "tipo_ponta": "Reta, ponta super fina/agulha (122mm)",
+        "aplicacao": "Trabalho microscópico de alta precisão (soldagem de jumpers e micro-SMD)"
+      },
+      {
+        "modelo": "ESD-15",
+        "tipo_ponta": "Curva (ângulo de 45°), ponta fina (122mm)",
+        "aplicacao": "Extração e posicionamento de CIs em locais estreitos ou sob o microscópio"
+      }
+    ]
+  },
+  "aplicacoes_comuns_bancada": [
+    "Posicionamento preciso de componentes SMD (resistores, capacitores, CIs) para soldagem",
+    "Remoção e colocação de malhas de dessoldagem e jumpers de microeletrônica",
+    "Manuseio seguro de peças sensíveis a descargas eletrostáticas (ESD) em smartphones e notebooks"
+  ]
+}

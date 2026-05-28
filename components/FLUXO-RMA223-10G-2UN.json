@@ -1,0 +1,30 @@
+{
+  "componente": {
+    "part_number": "FLUXO-RMA223-10G-2UN",
+    "sku_etiqueta": "435085",
+    "codigo_barras_interno": "FJTG48697",
+    "descricao_comercial": "Kit com 2 Fluxos Pastosos RMA-223 10g para BGA Reballing Reflow",
+    "fabricante_original": "Implastec",
+    "categoria": "Ferramentas e Consumíveis / Química e Soldagem",
+    "subcategoria": "Fluxo de Solda Pastoso (Seringa)",
+    "estado": "Novo (Embalagem lacrada com duas unidades)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 2,
+    "unidade_medida": "seringas",
+    "peso_liquido_por_unidade": "10g",
+    "caixa": "1",
+    "local": "Gaveteiro de Consumíveis / Químicos, Fluxos e Soldas"
+  },
+  "especificacoes_tecnicas_pesquisadas": {
+    "classificacao_tipo": "RMA (Rosin Mildly Activated / Breu Levemente Ativado)",
+    "consistencia": "Pastosa / Gel de alta viscosidade",
+    "aplicacao_alvo": "Soldagem SMD, retrabalho BGA (Reflow/Reballing), solda de componentes convencionais e reparos gerais",
+    "solubilidade_limpeza": "Solúvel em Álcool Isopropílico (IPA) ou removedores específicos de fluxo"
+  },
+  "vantagens_uso_bancada": [
+    "Excelente molhabilidade que facilita a fusão e o brilho da liga de estanho-chumbo ou Lead-Free",
+    "Embalagem em seringa que evita o desperdício e a contaminação cruzada do produto",
+    "Mantém os componentes SMD fixos na posição correta por adesão inicial antes da aplicação do calor"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "componente": {
+    "part_number": "TDA3651",
+    "fabricante_original": "Philips",
+    "categoria": "Semicondutores / Circuitos Integrados",
+    "subcategoria": "Amplificador de Deflexão Vertical (TV/CRT)",
+    "encapsulamento": "SIL9MP (Single In-line 9 pinos com aba metálica)",
+    "estado": "Novo (Excedente de lote industrial / Sucata de luxo)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 8,
+    "unidade_medida": "unidades",
+    "caixa": "1",
+    "local": "A1"
+  },
+  "especificacoes_tecnicas": {
+    "tensao_maxima_alimentacao_vcc": 40.0,
+    "tensao_tipica_operacao_vcc": 26.0,
+    "corrente_maxima_saida_pico_io": 2.0,
+    "frequencia_operacao_tipica": "50Hz - 60Hz",
+    "potencia_maxima_dissipada_pd": 15.0,
+    "unidade_potencia": "Watts",
+    "protecoes_integradas": [
+      "Proteção Térmica (Thermal Shut-down)",
+      "Proteção contra curto-circuito na saída",
+      "Proteção contra sobretensão (Flyback supply protection)"
+    ]
+  },
+  "aplicacoes_diy": [
+    "Amplificador de áudio mono de baixa frequência (Bancada)",
+    "Driver de potência para pequenos motores DC",
+    "Driver para solenoides e relés robustos",
+    "Gerador de sinais / Ondas dente de serra"
+  ],
+  "pinagem_resumida": {
+    "pino_1": "Inversora (-) / Entrada de Sinal",
+    "pino_2": "Não Inversora (+) / Entrada de Sinal",
+    "pino_3": "Saída de Estágio de Entrada",
+    "pino_4": "GND (Terra / Aba metálica conectada internamente)",
+    "pino_5": "Saída de Potência (Vertical Output)",
+    "pino_6": "Alimentação do Estágio de Saída (Flyback Supply)",
+    "pino_7": "Alimentação Geral (VCC)",
+    "pino_8": "Gerador de Rampa",
+    "pino_9": "Desacoplamento / Referência"
+  }
+}

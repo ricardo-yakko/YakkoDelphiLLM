@@ -1,0 +1,72 @@
+{
+  "componente": {
+    "part_number": "BOOST-DCDC-400W-15A",
+    "nome_comum": "Conversor Boost DC-DC Step-Up 400W",
+    "descricao_comercial": "Conversor Boost DC-DC Step-Up 400W 15A Regulador de Tensão Elevador",
+    "categoria": "Componentes e Módulos de Potência / Fontes e Reguladores",
+    "subcategoria": "Conversor Elevador de Tensão Chaveado (Boost) DC-DC",
+    "estado": "Novo / Funcional"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "unidade",
+    "caixa": "1",
+    "local": "Gaveteiro de Módulos de Potência / Conversores Boost e Step-Up"
+  },
+  "arquitetura_e_refrigeração": {
+    "dissipacao_termica": "Equipado com 2 grandes dissipadores de alumínio aletados montados nas laterais para garantir a refrigeração dos semicondutores de potência sob alta carga",
+    "elemento_indutivo": "Grande indutor toroidal central com enrolamento de fio de cobre duplo espesso, ideal para suportar altas correntes de chaveamento sem saturar",
+    "ajustes_trimpots": [
+      {
+        "identificacao": "Trimpot CV (Constant Voltage)",
+        "funcao": "Ajuste fino da tensão de saída desejada (sempre maior ou igual à de entrada)"
+      },
+      {
+        "identificacao": "Trimpot CC (Constant Current)",
+        "funcao": "Ajuste e limitação da corrente máxima de saída (proteção contra sobrecarga/carga de baterias)"
+      }
+    ],
+    "estagio_filtragem": "Possui 4 capacitores eletrolíticos de alumínio robustos de alta tensão (dois na entrada e dois na saída) para filtragem de ripple induzido pelo chaveamento de alta frequência"
+  },
+  "especificacoes_eletricas": {
+    "faixa_tensao_entrada": "8.5 VDC a 50 VDC",
+    "faixa_tensao_saida": "10 VDC a 60 VDC (Continuamente ajustável)",
+    "corrente_entrada_maxima": "15 A (Acima de 8A, ou se a temperatura passar de 65°C, exige instalação de refrigeração ativa / cooler)",
+    "corrente_estatica_repouso": "10 mA (Tipicamente aumenta quanto maior for a tensão de saída)",
+    "potencia_maxima_saida": "400 W",
+    "eficiencia_conversao": "Até 96% (Topologia assíncrona de alta eficiência)"
+  },
+  "mapeamento_de_conexoes": {
+    "terminais_entrada_potencia": {
+      "tipo": "Borne de parafuso azul (2 terminais)",
+      "pinagem": [
+        {
+          "terminal": "+ / IN",
+          "funcao": "Entrada Positiva da fonte ou bateria principal (8.5V-50V)"
+        },
+        {
+          "terminal": "- / IN",
+          "funcao": "Entrada Negativa / GND de referência"
+        }
+      ]
+    },
+    "terminais_saida_elevada": {
+      "tipo": "Borne de parafuso azul (2 terminais)",
+      "pinagem": [
+        {
+          "terminal": "+ / OUT",
+          "funcao": "Saída Positiva Elevada e Regulada"
+        },
+        {
+          "terminal": "- / OUT",
+          "funcao": "Saída Negativa / Retorno da Carga"
+        }
+      ]
+    }
+  },
+  "aplicacoes_comuns_bancada": [
+    "Elevar a tensão de baterias de 12V automotivas ou estacionárias para alimentar notebooks ou equipamentos de rede que operam em 19V ou 24V",
+    "Montagem de fontes estabilizadoras para drivers de super LEDs de alta potência ou arranjos que exigem corrente constante",
+    "Sistema de carga para bancos de baterias em projetos de energia solar móvel, regulando a tensão ideal de flutuação"
+  ]
+}

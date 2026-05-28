@@ -1,0 +1,47 @@
+{
+  "componente": {
+    "part_number": "CNC-SHIELD-V3",
+    "nome_comum": "CNC Shield V3",
+    "versao_hardware": "VER 3.00",
+    "projeto_base": "Protoneer (Inspirado no design open-source da infoproteoneer.com)",
+    "descricao_comercial": "Placa de Expansão CNC Shield V3 para Controle de Motores de Passo",
+    "categoria": "Componentes de Potência e Controle / Drivers e Shields para Motores",
+    "subcategoria": "Shields de Controle de Eixos para Arduino Uno",
+    "estado": "Usado / Funcional (Bancada)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "unidade",
+    "caixa": "1",
+    "local": "Gaveteiro de Controladoras / Peças para Impressora 3D e CNC Router"
+  },
+  "arquitetura_e_compatibilidade": {
+    "placa_hospedeira_compativel": "Arduino Uno R3 ou placas com pinagem padrão equivalente",
+    "capacidade_motores_passo": "Suporta até 4 drivers de motor de passo nos slots amarelos/vermelhos (Compatível com drivers A4988, DRV8825, TMC2208, etc.)",
+    "mapeamento_eixos": {
+      "eixos_nativos": [
+        "Eixo X",
+        "Eixo Y",
+        "Eixo Z"
+      ],
+      "quarto_eixo_auxiliar": "Eixo A (Pode clonar um dos eixos X/Y/Z ou operar como um quarto eixo completo/independente via configuração física de jumpers nos pinos azuis integrados)"
+    },
+    "firmware_nativo_compativel": "GRBL (Versões 0.8 / 0.9 / 1.1) para controle por comandos G-Code"
+  },
+  "especificacoes_eletricas_e_conexoes": {
+    "tensao_alimentacao_motores": "12 VDC a 36 VDC (Entrada via borne azul reforçado)",
+    "capacitores_filtro": "Possui 4 capacitores eletrolíticos de alumínio (classe de temperatura até 105°C) dedicados à filtragem e proteção das linhas de alimentação de potência de cada motor",
+    "interfaces_fim_de_curso_endstops": "Barramento lateral duplo com pinagem para fim de curso de todos os eixos (X+, X-, Y+, Y-, Z+, Z-)",
+    "comandos_perifericos_mapeados": [
+      "SpnEn (Habilitação do Spindle / Retífica / Laser)",
+      "SpnDir (Direção do Spindle)",
+      "CoolEn (Habilitação do sistema de refrigeração)",
+      "Abort / Hold / Resume / E-STOP (Controles físicos externos de pausa, emergência e retomada)"
+    ]
+  },
+  "aplicacoes_comuns_bancada": [
+    "Montagem e controle de mini máquinas CNC Router de bancada para corte de placas de circuito impresso (PCBs), MDF ou acrílico",
+    "Montagem de gravadoras a laser de eixos X/Y",
+    "Projetos de automação mecânica customizados, como cortadoras de isopor por fio quente ou braços robóticos de precisão controlados por G-Code"
+  ]
+}

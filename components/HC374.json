@@ -1,0 +1,51 @@
+{
+  "componente": {
+    "part_number": "HC374",
+    "part_number_oficial": "74HC374",
+    "fabricante_original": "Toshiba",
+    "categoria": "Circuitos Integrados / Lógica",
+    "subcategoria": "Octal D-Type Flip-Flop (Registrador Paralelo)",
+    "encapsulamento": "SOP-20 / SOIC-20 (Montagem em Superfície - SMD)",
+    "estado": "Novo (Excedente de lote industrial)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "unidades",
+    "caixa": "1",
+    "local": "A1"
+  },
+  "especificacoes_tecnicas_datasheet": {
+    "tensao_de_alimentacao_vcc": "2.0 a 6.0",
+    "unidade_tensao": "Volts",
+    "numero_de_bits_internos": 8,
+    "tipo_de_saida": "3-State (Alto, Baixo e Alta Impedância)",
+    "corrente_de_saida_por_canal": 6.0,
+    "unidade_corrente": "miliAmperes (mA a VCC=4.5V)",
+    "atraso_de_propagacao_tpd": 15.0,
+    "unidade_tempo": "nanossegundos (ns - típico)",
+    "temperatura_de_operacao_topr": "-40 a +85",
+    "unidade_temperatura": "Graus Celsius"
+  },
+  "pinagem_oficial_74hc374": {
+    "pino_1": "OE (Output Enable - Ativa saídas em nível baixo / Alta impedância em nível alto)",
+    "pino_2": "Q0 (Saída de Dados 0)",
+    "pino_3": "D0 (Entrada de Dados 0)",
+    "pino_4": "D1 (Entrada de Dados 1)",
+    "pino_5": "Q1 (Saída de Dados 1)",
+    "pino_6": "Q2 (Saída de Dados 2)",
+    "pino_7": "D2 (Entrada de Dados 2)",
+    "pino_8": "D3 (Entrada de Dados 3)",
+    "pino_9": "Q3 (Saída de Dados 3)",
+    "pino_10": "GND (Terra)",
+    "pino_11": "CLK (Clock Input - Gatilho por borda de subida)",
+    "pino_12": "Q4 (Saída de Dados 4)",
+    "pino_13": "D4 (Entrada de Dados 4)",
+    "pino_14": "D5 (Entrada de Dados 5)",
+    "pino_15": "Q5 (Saída de Dados 5)",
+    "pino_16": "Q6 (Saída de Dados 6)",
+    "pino_17": "D6 (Entrada de Dados 6)",
+    "pino_18": "D7 (Entrada de Dados 7)",
+    "pino_19": "Q7 (Saída de Dados 7)",
+    "pino_20": "VCC (Alimentação +2V a +6V)"
+  }
+}

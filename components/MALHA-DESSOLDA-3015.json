@@ -1,0 +1,36 @@
+{
+  "componente": {
+    "part_number": "MALHA-DESSOLDA-3015",
+    "part_number_comum": "MALHA-DESSOLDA-3015",
+    "fabricante_original": "Zimpor",
+    "marca": "Zimpor",
+    "modelo": "Fita Malha Dessoldadora",
+    "descricao_comercial": "Malha / Fita Dessoldadora de Cobre de Alta Eficiência",
+    "oferecido_por": "Zomus Ltda",
+    "categoria": "Ferramentas e Consumíveis / Química e Soldagem",
+    "subcategoria": "Remoção e Limpeza de Solda",
+    "estado": "Novo"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "unidade",
+    "caixa": "1",
+    "local": "Gaveteiro de Insumos / Fitas, Malhas e Descalcificantes"
+  },
+  "especificacoes_tecnicas": {
+    "material_base": "Cobre de alta pureza trançado",
+    "cor": "Cobre",
+    "largura": "3.0 mm",
+    "comprimento_total": "1.5 m",
+    "compatibilidade_termica_voltagem": "Bivolt (Adequado para uso com ferros de solda / estações de retrabalho operando em 127V ou 220V)",
+    "revestimento_fluxo": "Tipicamente pré-fluxada com resina tipo RMA para aceleração da absorção por capilaridade"
+  },
+  "aplicacoes_e_recomendacoes": {
+    "funcoes_principais": [
+      "Remoção eficiente de excesso de solda em furos passantes (Through-Hole)",
+      "Limpeza e desobstrução de curtos-circuitos (pontes de solda) entre pinos de CIs SMD",
+      "Limpeza profunda de ilhas de solda (pads) em placas de circuito impresso antes do reballing ou substituição de componentes"
+    ],
+    "modo_de_uso_bancada": "Posicionar a malha sobre a solda a ser removida, aplicar a ponta aquecida do ferro de soldar por cima da fita por alguns segundos até que o estanho derreta e seja completamente absorvido pelo cobre"
+  }
+}

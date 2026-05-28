@@ -1,0 +1,64 @@
+{
+  "componente": {
+    "part_number": "BA6238A",
+    "fabricante_original": "ROHM Semiconductor",
+    "categoria": "Circuitos Integrados / Semicondutores",
+    "subcategoria": "Driver de Motor Monolítico Reversível",
+    "encapsulamento": "SIP-10 (Single In-line Package de 10 pinos)",
+    "estado": "Novo (Excedente de lote industrial / Stock antigo)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 2,
+    "unidade_medida": "unidades",
+    "caixa": "1",
+    "local": "A1"
+  },
+  "especificacoes_tecnicas_datasheet": {
+    "tensao_maxima_de_alimentacao_vcc": 18.0,
+    "tensao_limite_de_operacao_vcc_op": 15.0,
+    "corrente_maxima_de_saida_io_max": 1.0,
+    "unidade_corrente": "Ampere",
+    "potencia_maxima_dissipada_pd": 1.25,
+    "unidade_potencia": "Watts (a 25°C, sem dissipador adicional)",
+    "temperatura_maxima_de_juncao_tj": 150.0,
+    "temperatura_de_operacao_topr": "-20 a +75",
+    "unidade_temperatura": "Graus Celsius",
+    "circuitos_de_protecao_internos": [
+      "Circuito de Proteção Térmica (TSD - Thermal Shutdown)",
+      "Circuito de Prevenção de Corrente de Surto (Overvoltage/Surge)",
+      "Diodos de absorção de surto integrados na saída (Surge absorption diodes)"
+    ]
+  },
+  "modos_de_operacao_da_ponte_h": {
+    "condicao_entradas": "Baseado nos pinos de controle lógico IN1 e IN2",
+    "estados_possiveis": [
+      {
+        "entrada_1": "LOW",
+        "entrada_2": "LOW",
+        "saida_motor": "Standby / Circuito aberto (Motor Livre)"
+      },
+      {
+        "entrada_1": "HIGH",
+        "entrada_2": "LOW",
+        "saida_motor": "Rotação no Sentido Horário (Forward)"
+      },
+      {
+        "entrada_1": "LOW",
+        "entrada_2": "HIGH",
+        "saida_motor": "Rotação no Sentido Anti-horário (Reverse)"
+      },
+      {
+        "entrada_1": "HIGH",
+        "entrada_2": "HIGH",
+        "saida_motor": "Frenagem Eletrônica (Brake / Curto-circuito nas saídas)"
+      }
+    ]
+  },
+  "caracteristicas_de_projeto": {
+    "recursos": [
+      "Controle direto de motores DC escovados através de lógica digital interna",
+      "Corrente de standby extremamente baixa quando as duas entradas estão em nível lógico baixo",
+      "Pinos de saída projetados para suportar a força contraeletromotriz gerada por cargas indutivas"
+    ]
+  }
+}

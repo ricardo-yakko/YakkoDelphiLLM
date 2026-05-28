@@ -1,0 +1,43 @@
+{
+  "componente": {
+    "part_number": "3050C",
+    "prefixos_equivalentes": [
+      "MBR3050C",
+      "SBR3050C",
+      "SPB3050C"
+    ],
+    "fabricante_original": "Sanken / SK",
+    "categoria": "Semicondutores / Diodos",
+    "subcategoria": "Diodo Schottky Duplo de Potência",
+    "configuracao_interna": "Catodo Comum (Common Cathode)",
+    "encapsulamento": "TO-220AB (Aba metálica exposta)",
+    "estado": "Novo (Excedente de lote industrial / Sucata de luxo)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 11,
+    "unidade_medida": "unidades",
+    "caixa": "1",
+    "local": "A1"
+  },
+  "especificacoes_tecnicas": {
+    "tensao_maxima_reversa_vrm": 50.0,
+    "corrente_maxima_total_io": 30.0,
+    "corrente_por_braco_anodo": 15.0,
+    "unidade_corrente": "Amperes",
+    "queda_tensao_direta_vf_tipica": 0.62,
+    "unidade_tensao": "Volts",
+    "temperatura_maxima_juncao_tj": 150.0,
+    "unidade_temperatura": "Graus Celsius"
+  },
+  "aplicacoes_diy": [
+    "Retificação de saída em fontes chaveadas de alta potência",
+    "Retificador de onda completa para carregadores de bateria rápidos (Automotivos/Som)",
+    "Diodo de bloqueio antirretorno para painéis solares ou bancos de baterias robustos",
+    "Proteção contra inversão de polaridade em circuitos de alta corrente"
+  ],
+  "pinagem": {
+    "pino_1": "Anodo 1 (Entrada AC / Fonte 1)",
+    "pino_2": "Catodo Comum (Saída Positiva +DC / Ligado à aba de metal)",
+    "pino_3": "Anodo 2 (Entrada AC / Fonte 2)"
+  }
+}

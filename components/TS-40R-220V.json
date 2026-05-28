@@ -1,0 +1,29 @@
+{
+  "componente": {
+    "part_number": "TS-40R-220V",
+    "descricao_comercial": "Resistência para Ferro de Solda 40W / 220V",
+    "fabricante": "Padrão Hikari / Compatíveis de Mercado",
+    "categoria": "Ferramentas e Consumíveis / Reposição",
+    "subcategoria": "Resistência de Aquecimento para Ferro de Solda",
+    "estado": "Novo (Na embalagem / Blister lacrado)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "peça",
+    "caixa": "1",
+    "local": "Gaveteiro de Consumíveis / Peças para Ferros de Solda"
+  },
+  "especificacoes_tecnicas_pesquisadas": {
+    "potencia_nominal": 40.0,
+    "unidade_potencia": "Watts (W)",
+    "tensao_operacao": 220.0,
+    "unidade_tensao": "Volts AC (V~)",
+    "tecnologia_construcao": "Fio de Níquel-Cromo (NiCr) com isolamento em Mica",
+    "temperatura_maxima_estimada": "Aproximadamente 410°C a 450°C"
+  },
+  "compatibilidade_comprovada": [
+    "Ferros de solda Hobby/Profissionais de 40W (Linha Hikari Plus, SC-40, TS-40)",
+    "Ferros de solda tipo machadinha ou tubulares de diâmetro interno compatível com o elemento de 40W"
+  ],
+  "dica_de_montagem": "Ao substituir, limpe bem o tubo interno do ferro de solda para remover resíduos de oxidação antiga antes de inserir a nova resistência. Isso evita curto-circuito com a carcaça metálica e melhora a transferência térmica."
+}

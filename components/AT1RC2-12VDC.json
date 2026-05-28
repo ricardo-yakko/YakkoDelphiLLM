@@ -1,0 +1,33 @@
+{
+  "componente": {
+    "part_number": "AT1RC2-12VDC",
+    "fabricante_original": "METALTEX",
+    "categoria": "Eletromecânicos / Relés",
+    "subcategoria": "Relé de Potência para PCB (Sugar Cube)",
+    "configuracao_contatos": "SPDT (1 Polo / 1 Contato Reversível)",
+    "encapsulamento": "Selado plástico tipo cubo (PTH)",
+    "estado": "Novo (Excedente de lote antigo / NOS)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 2,
+    "unidade_medida": "unidades",
+    "caixa": "1",
+    "local": "A1"
+  },
+  "especificacoes_tecnicas_bobina": {
+    "tensao_nominal_bobina": 12.0,
+    "tipo_tensao_bobina": "VDC (Corrente Contínua)",
+    "resistencia_media_bobina_esperada": "Aproximadamente 320 a 400 Ohms"
+  },
+  "capacidade_dos_contatos": {
+    "corrente_maxima_resistiva": 15.0,
+    "tensao_nominal_ac": 120.0,
+    "tipo_de_carga_especificada": "Resistiva (res.)",
+    "codigo_data_fabricacao": "06/04 (Semana 06 de 2004)"
+  },
+  "aplicacoes_comuns": [
+    "Módulos de acionamento de potência (Arduino, ESP32, PIC)",
+    "Automação de lâmpadas residenciais, refletores e pequenos aquecedores",
+    "Placas de comando de eletrodomésticos, estabilizadores e no-breaks antigos"
+  ]
+}

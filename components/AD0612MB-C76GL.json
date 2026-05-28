@@ -1,0 +1,34 @@
+{
+  "componente": {
+    "part_number": "AD0612MB-C76GL",
+    "fabricante": "ADDA CORP.",
+    "categoria": "Eletromecânicos / Refrigeração",
+    "subcategoria": "Cooler / Ventoinha DC Brushless",
+    "tipo_mancal": "Ball Bearing (Rolamento de Esfera)",
+    "estado": "Novo (Excedente de lote / Retirado de equipamento sem uso)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "unidades",
+    "caixa": "1",
+    "local": "Celular central de componentes"
+  },
+  "especificacoes_eletricas": {
+    "tensao_nominal": 12.0,
+    "tipo_tensao": "VDC",
+    "corrente_nominal": 0.13,
+    "unidade_corrente": "Amperes (A)",
+    "potencia_consumo_calculada": 1.56,
+    "unidade_potencia": "Watts (W)"
+  },
+  "especificacoes_mecanicas": {
+    "dimensoes_carcaça": "60mm x 60mm",
+    "classe_velocidade": "Média (Medium Speed)",
+    "certificacoes_seguranca": ["CE", "RU (UL)", "TUV"]
+  },
+  "aplicacoes_comuns": [
+    "Arrefecimento de dissipadores em fontes chaveadas industriais",
+    "Exaustão interna de gabinetes e caixas de comando de robótica/automação",
+    "Substituição de ventoinhas em inversores, no-breaks ou equipamentos de telecomunicação"
+  ]
+}

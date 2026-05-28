@@ -1,0 +1,27 @@
+{
+  "componente": {
+    "part_number": "S16503G",
+    "part_number_oficial": "S16503 G",
+    "fabricante_original": "Bothhand Enterprise",
+    "categoria": "Eletromecânicos / Semicondutores de Potência",
+    "subcategoria": "Módulo Switch / Relé de Estado Sólido Isolador",
+    "encapsulamento": "SOIC-16 (SMD)",
+    "estado": "Novo (Excedente de lote)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 3,
+    "unidade_medida": "unidades",
+    "caixa": "1",
+    "local": "A1"
+  },
+  "especificacoes_tecnicas": {
+    "funcao_principal": "Isolamento galvânico e chaveamento de linhas de sinal",
+    "recursos_internos": "Barreira de isolamento físico integrada",
+    "codigo_data_lote": "1943 (Semana 43 de 2019)"
+  },
+  "aplicacoes_comuns": [
+    "Isolamento de pinos de I/O em interfaces de comunicação e controle",
+    "Chaveamento rápido de sinais digitais sem desgaste mecânico",
+    "Proteção de circuitos lógicos contra transientes e loops de terra"
+  ]
+}

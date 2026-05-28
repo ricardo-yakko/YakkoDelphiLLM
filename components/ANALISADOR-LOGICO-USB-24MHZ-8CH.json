@@ -1,0 +1,71 @@
+{
+  "componente": {
+    "part_number": "ANALISADOR-LOGICO-USB-24MHZ-8CH",
+    "nome_comum": "Analisador Lógico USB",
+    "descricao_comercial": "Analisador Lógico USB de 8 canais / 24 MHz",
+    "arquitetura_base": "Compatível com Saleae Logic / USB-Based MCU (Baseado no chip Cypress CY7C68013A)",
+    "categoria": "Instrumentação e Teste / Diagnóstico Digital",
+    "subcategoria": "Analisador Lógico USB de 8 Canais",
+    "estado": "Novo (Na embalagem original / Sem uso)"
+  },
+  "especificacoes_hardware": {
+    "frequencia_maxima_amostragem": "24 MHz",
+    "quantidade_canais": 8,
+    "interface_comunicacao": "USB 2.0 High Speed (Mini-USB ou Micro-USB)",
+    "faixa_tensao_logica": {
+      "nivel_baixo_maximo_vil": "0.8 V",
+      "nivel_alto_minimo_vih": "2.0 V",
+      "suporte_sinal": "Compatível com lógica de 5V, 3.3V, 2.5V e 1.8V"
+    },
+    "impedancia_entrada": "100K Ohms || 5pF"
+  },
+  "mapeamento_pinagem": {
+    "tipo_conector": "Macho IDC de 10 pinos (2x5)",
+    "sinais_identificados": [
+      {
+        "pino": "CH1",
+        "funcao": "Canal Digital de Entrada 1"
+      },
+      {
+        "pino": "CH3",
+        "funcao": "Canal Digital de Entrada 3"
+      },
+      {
+        "pino": "CH5",
+        "funcao": "Canal Digital de Entrada 5"
+      },
+      {
+        "pino": "CH7",
+        "funcao": "Canal Digital de Entrada 7"
+      },
+      {
+        "pino": "CLK",
+        "funcao": "Entrada de Clock Externo / Amostragem Síncrona"
+      },
+      {
+        "observacao": "Os pinos pares (CH2, CH4, CH6, CH8) e GND ficam na fileira paralela adjacente"
+      }
+    ]
+  },
+  "software_e_protocolos": {
+    "softwares_compativeis": [
+      "Logic (Saleae)",
+      "Sigrok / PulseView (Open Source)"
+    ],
+    "protocolos_suportados_para_decodificacao": [
+      "UART / RS-232 / RS-485",
+      "I2C (Inter-Integrated Circuit)",
+      "SPI (Serial Peripheral Interface)",
+      "CAN Bus",
+      "1-Wire",
+      "PWM (Análise de ciclo de trabalho e frequência)",
+      "Sinais de controle de displays (HD44780)"
+    ]
+  },
+  "aplicacoes_comuns_bancada": [
+    "Depuração e engenharia reversa de barramentos de comunicação digital",
+    "Monitoramento de tráfego de dados entre microcontroladores (como ESP32, Arduino) e periféricos (sensores, displays, memórias)",
+    "Análise de temporização precisa de sinais PWM e transições de estado lógico",
+    "Validação do envio correto de pacotes de dados em firmwares customizados"
+  ]
+}

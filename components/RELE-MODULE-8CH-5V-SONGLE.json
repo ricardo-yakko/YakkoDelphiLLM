@@ -1,0 +1,67 @@
+{
+  "componente": {
+    "part_number": "RELE-MODULE-8CH-5V-SONGLE",
+    "nome_comum": "Módulo Relé 8 Canais",
+    "serigrafia_placa": "8 Relay Module",
+    "fabricante_original": "Genérico com relés Songle",
+    "categoria": "Componentes e Módulos de Acionamento / Automação e Robótica",
+    "subcategoria": "Placa de Relés para Controle de Carga AC/DC",
+    "estado": "Em uso / Funcional"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "unidade",
+    "caixa": "1",
+    "local": "Gaveteiro de Módulos / Componentes de Automação (Arduino/ESP32)"
+  },
+  "especificacoes_do_rele": {
+    "fabricante_rele": "Songle",
+    "modelo_rele": "JQC-3FF-S-Z",
+    "tensao_bobina_sinal": "5 VDC",
+    "capacidade_maxima_carga_ac": "10A @ 250VAC / 15A @ 125VAC",
+    "capacidade_maxima_carga_dc": "10A @ 30VDC"
+  },
+  "arquitetura_e_seguranca": {
+    "isolamento_sinal": "Possui optoacopladores dedicados (SMD) para cada canal, garantindo isolamento galvânico total entre o circuito lógico (microcontrolador) e a carga de potência",
+    "configuracao_trigger": "Ativação por nível lógico baixo (Low Level Trigger)",
+    "indicadores_visuais": "8 LEDs SMD integrados para indicar o estado de acionamento de cada relé (LED aceso = relé energizado)",
+    "analise_p_c_b_reverso": "Apresenta fresagem física no PCB (recortes de isolação abaixo de cada relé) para aumentar a isolação de alta tensão (creepage distance) entre os pinos comuns e os contatos NA/NF, prevenindo arcos elétricos"
+  },
+  "mapeamento_conexoes": {
+    "barramento_logico_entrada": {
+      "tipo_conector": "Barra de pinos macho de 10 pinos (1x10)",
+      "pinagem": [
+        "GND",
+        "IN1",
+        "IN2",
+        "IN3",
+        "IN4",
+        "IN5",
+        "IN6",
+        "IN7",
+        "IN8",
+        "VCC"
+      ],
+      "seletor_jd_vcc": "Possui jumper JD-VCC / VCC / GND para permitir alimentação externa separada para as bobinas dos relés, isolando completamente os ruídos eletromagnéticos da placa lógica"
+    },
+    "terminais_saida_potencia": {
+      "tipo_bornes": "8 conjuntos de bornes de parafuso de 3 vias",
+      "configuracao_por_canal": [
+        {
+          "via_esquerda": "NA (Normalmente Aberto)"
+        },
+        {
+          "via_central": "Comum"
+        },
+        {
+          "via_direita": "NF (Normalmente Fechado)"
+        }
+      ]
+    }
+  },
+  "aplicacoes_comuns_bancada": [
+    "Controle de lâmpadas, motores, solenoides e eletrodomésticos através de microcontroladores de 5V (ou 3.3V com conversor de nível/alimentação JD-VCC ajustada)",
+    "Prototipagem de sistemas de automação residencial (Home Automation)",
+    "Interfaceamento de saídas digitais de baixa corrente para acionamento de cargas industriais de corrente alternada"
+  ]
+}

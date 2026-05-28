@@ -1,0 +1,36 @@
+{
+  "componente": {
+    "part_number": "B5A60VI",
+    "categoria": "Semicondutores / Diodos",
+    "subcategoria": "Diodo de Recuperação Ultra-Rápida (Ultra-Fast)",
+    "configuracao_interna": "Diodo Simples (Single Diode)",
+    "encapsulamento": "TO-220F (Full-Mold totalmente isolado de 2 pinos)",
+    "estado": "Novo (Excedente de lote industrial / Sucata de luxo)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "unidades",
+    "caixa": "1",
+    "local": "A1"
+  },
+  "especificacoes_tecnicas_datasheet": {
+    "tensao_maxima_reversa_vrm": 600.0,
+    "unidade_tensao": "Volts",
+    "corrente_maxima_continua_io": 5.0,
+    "unidade_corrente": "Amperes",
+    "caracteristica_chaveamento": "Ultra-Fast Recovery (Recuperação Ultra-Rápida)",
+    "temperatura_maxima_de_juncao_tj": 150.0,
+    "unidade_temperatura": "Graus Celsius"
+  },
+  "pinagem_oficial": {
+    "pino_1": "Anodo (Entrada / Lado Positivo)",
+    "pino_2": "Catodo (Saída / Lado Negativo - indicado pelo traço no símbolo físico)"
+  },
+  "caracteristicas_de_projeto": {
+    "recursos": [
+      "Suporta altas tensões reversas de até 600V",
+      "Perdas por comutação extremamente baixas devido à alta velocidade",
+      "Encapsulamento isolado que simplifica a montagem mecânica em dissipadores"
+    ]
+  }
+}

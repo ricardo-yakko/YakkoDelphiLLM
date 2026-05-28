@@ -1,0 +1,37 @@
+{
+  "componente": {
+    "part_number": "3050J",
+    "part_number_oficial": "SI-3050J",
+    "fabricante_original": "Sanken Electric (SK)",
+    "categoria": "Circuitos Integrados / Gerenciamento de Energia",
+    "subcategoria": "Regulador de Tensão Linear LDO (Low Dropout)",
+    "encapsulamento": "TO-220F-5 (Full-Mold de 5 pinos isolado)",
+    "estado": "Novo (Excedente de lote industrial / Sucata de luxo)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "unidades",
+    "caixa": "1",
+    "local": "A1"
+  },
+  "especificacoes_tecnicas_datasheet": {
+    "tensao_de_saida_fixa_vout": 5.0,
+    "unidade_tensao": "Volts",
+    "corrente_maxima_de_saida_io": 2.0,
+    "unidade_corrente": "Amperes",
+    "tensao_de_queda_dropout_vdif": 1.0,
+    "circuitos_de_protecao": [
+      "Proteção Térmica Interna (Thermal Shutdown)",
+      "Limitador de Sobretensão (Overvoltage Protection)",
+      "Proteção contra curto-circuito (Foldback Overcurrent)"
+    ],
+    "recurso_extra": "Pino de controle ON/OFF digital (Compatível com lógica TTL/CMOS)"
+  },
+  "pinagem_oficial": {
+    "pino_1": "Vo_Sense (Referência / Ajuste fino de tensão)",
+    "pino_2": "Control (ON/OFF Digital - Nível Alto liga, Nível Baixo desliga)",
+    "pino_3": "VIN (Entrada de tensão DC bruta)",
+    "pino_4": "GND (Terra / Comum)",
+    "pino_5": "VOUT (Saída regulada estável de 5.0V)"
+  }
+}

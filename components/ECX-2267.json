@@ -1,0 +1,22 @@
+{
+  "componente": {
+    "part_number": "ECX-2267",
+    "part_number_oficial": "ECLIPTEK ECX 2267",
+    "fabricante_original": "ECLIPTEK",
+    "categoria": "Componentes de Clock e Osciladores",
+    "subcategoria": "Cristal de Quartzo Ressonador Passivo",
+    "encapsulamento": "HC-49 (Metálico Through-Hole)",
+    "estado": "Novo"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "unidades",
+    "caixa": "1",
+    "local": "A1"
+  },
+  "especificacoes_tecnicas": {
+    "tipo_de_componente": "Ressonador piezoelétrico de quartzo passivo",
+    "quantidade_de_pinos": 2,
+    "funcao_principal": "Fornecer a base de tempo/clock estável para microcontroladores ou CIs de comunicação"
+  }
+}

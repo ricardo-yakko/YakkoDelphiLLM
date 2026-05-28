@@ -1,0 +1,42 @@
+{
+  "componente": {
+    "part_number": "J306",
+    "part_number_oficial": "2SJ306",
+    "fabricante_original": "Sanyo Semiconductor (onsemi)",
+    "categoria": "Semicondutores / Transistores",
+    "subcategoria": "MOSFET de Potência de Canal P (P-Channel)",
+    "encapsulamento": "TO-220ML (Full-Pack isolado)",
+    "estado": "Novo (Excedente de lote industrial / Stock antigo)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 5,
+    "unidade_medida": "unidades",
+    "caixa": "1",
+    "local": "A1"
+  },
+  "especificacoes_tecnicas_datasheet": {
+    "tensao_maxima_dreno_fonte_vdss": -250.0,
+    "unidade_tensao": "Volts",
+    "corrente_maxima_continua_id": -3.0,
+    "corrente_de_dreno_pulsada_idp": -12.0,
+    "unidade_corrente": "Amperes",
+    "resistencia_rds_on_maxima": 2.0,
+    "unidade_resistencia": "Ohms",
+    "tensao_de_gate_vgs_maxima": 30.0,
+    "potencia_maxima_dissipada_pd": 25.0,
+    "unidade_potencia": "Watts",
+    "caracteristica_chaveamento": "Ultrahigh-Speed Switching (Altíssima velocidade)"
+  },
+  "pinagem_oficial": {
+    "pino_1": "Gate (G / Portão de Controle)",
+    "pino_2": "Dreno (D / Saída de Carga)",
+    "pino_3": "Fonte (S / Source)"
+  },
+  "caracteristicas_de_projeto": {
+    "recursos": [
+      "Drive de acionamento por tensão com baixa carga de gate",
+      "Encapsulamento totalmente plástico que dispensa isoladores de mica",
+      "Excelente estabilidade térmica para chaveamento rápido"
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "componente": {
+    "part_number": "FCH10A10",
+    "fabricante_original": "Nihon Inter Electronics Corporation (NIEC)",
+    "categoria": "Semicondutores / Diodos",
+    "subcategoria": "Diodo Schottky Duplo de Potência",
+    "configuracao_interna": "Catodo Comum (Common Cathode)",
+    "encapsulamento": "TO-220F (Full-Mold totalmente isolado)",
+    "estado": "Novo (Excedente de lote industrial / Sucata de luxo)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 3,
+    "unidade_medida": "unidades",
+    "caixa": "1",
+    "local": "A1"
+  },
+  "especificacoes_tecnicas_datasheet": {
+    "tensao_maxima_reversa_vrm": 100.0,
+    "unidade_tensao": "Volts",
+    "corrente_maxima_total_io": 10.0,
+    "corrente_por_diodo_interno": 5.0,
+    "unidade_corrente": "Amperes",
+    "queda_tensao_direta_vf_maxima": 0.85,
+    "temperatura_maxima_de_juncao_tj": 150.0,
+    "unidade_temperatura": "Graus Celsius"
+  },
+  "pinagem_oficial": {
+    "pino_1": "Anodo 1 (Entrada AC / Sinal 1)",
+    "pino_2": "Catodo Comum (Saída Positiva +DC / Central)",
+    "pino_3": "Anodo 2 (Entrada AC / Sinal 2)"
+  },
+  "caracteristicas_de_projeto": {
+    "recursos": [
+      "Alta suportabilidade a tensões reversas (até 100V)",
+      "Isolação elétrica total em encapsulamento plástico moldado",
+      "Ideal para retificação secundária em fontes chaveadas de alta frequência"
+    ]
+  }
+}

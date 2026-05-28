@@ -1,0 +1,29 @@
+{
+  "componente": {
+    "part_number": "RES-100R-5W-5",
+    "fabricante_original": "Genérico / Industrial",
+    "categoria": "Componentes Passivos / Resistores",
+    "subcategoria": "Resistor de Fio (Wirewound)",
+    "tipo_montagem": "PTH (Through-Hole / Terminal Axial)",
+    "estado": "Novo (Excedente de lote)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "unidades",
+    "caixa": "1",
+    "local": "B1"
+  },
+  "especificacoes_tecnicas": {
+    "valor_nominal": 100.0,
+    "unidade_resistencia": "Ohms (100R)",
+    "tolerancia_percentual": 5.0,
+    "potencia_maxima_dissipacao": 5.0,
+    "unidade_potencia": "Watts (W)",
+    "faixa_valores_aceitaveis_multimetro": "95.0 a 105.0 Ohms"
+  },
+  "aplicacoes_comuns": [
+    "Redução de tensão suave para coolers ou pequenos relés",
+    "Snubber de potência em paralelo com contatos de relés/triacs",
+    "Divisores de tensão robustos em circuitos de filtragem linear"
+  ]
+}

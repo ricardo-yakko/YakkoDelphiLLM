@@ -1,0 +1,45 @@
+{
+  "componente": {
+    "part_number": "S16503G",
+    "part_number_oficial": "S16503G",
+    "fabricante_original": "Swatow / Marcas Especializadas em Display",
+    "categoria": "Circuitos Integrados / Lógica",
+    "subcategoria": "Driver de Display LED / Registrador de Deslocamento",
+    "encapsulamento": "SOP-16 / SOIC-16 (Montagem em Superfície - SMD)",
+    "estado": "Novo (Excedente de lote industrial / Stock antigo)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "unidades",
+    "caixa": "1",
+    "local": "A1"
+  },
+  "especificacoes_tecnicas_datasheet": {
+    "tensao_de_alimentacao_logica_vcc": "4.5 a 5.5",
+    "unidade_tensao": "Volts",
+    "numero_de_canais_de_saida": 8,
+    "tipo_de_saida": "Corrente Constante / Driver de Alta Tensão",
+    "frequencia_maxima_de_clock": 25.0,
+    "unidade_frequencia": "MegaHertz (MHz)",
+    "tipo_de_interface": "Serial (Data, Clock, Latch, Output Enable)",
+    "temperatura_de_operacao_topr": "-40 a +85",
+    "unidade_temperatura": "Graus Celsius"
+  },
+  "pinagem_generica_soic16": {
+    "pino_1": "GND (Terra)",
+    "pino_2": "SIN (Serial Data Input / Entrada de Dados)",
+    "pino_3": "CLK (Clock Input / Pulso de Relógio)",
+    "pino_4_ao_11": "OUT0 a OUT7 (Saídas paralelas para os segmentos/LEDs)",
+    "pino_12": "LAT / STB (Latch / Strobe Input - Trava os dados na saída)",
+    "pino_13": "OE (Output Enable - Ativa/Desativa as saídas, útil para controle de brilho via PWM)",
+    "pino_14": "SOUT (Serial Data Output / Saída serial para cascatear próximo chip)",
+    "pino_16": "VDD / VCC (Alimentação +5V)"
+  },
+  "caracteristicas_de_projeto": {
+    "recursos": [
+      "Permite controlar displays grandes de matriz de LED sem perda de brilho",
+      "Suporta cascateamento ilimitado ligando o pino SOUT no SIN do próximo integrado",
+      "Controle de brilho global por modulação de largura de pulso (PWM) através do pino OE"
+    ]
+  }
+}

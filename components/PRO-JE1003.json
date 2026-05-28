@@ -1,0 +1,23 @@
+{
+  "componente": {
+    "part_number": "PRO-JE1003",
+    "sku_etiqueta": "LPDY44448",
+    "descricao_comercial": "Jogo de Espátulas Profissionais de Aço para Desmontagem e Manutenção",
+    "fabricante_original": "EXBOM",
+    "categoria": "Ferramentas de Bancada / Acessórios de Manutenção",
+    "subcategoria": "Espátulas de Aço Inox e Alavancas de Desmontagem",
+    "estado": "Novo (Na embalagem original / Blister)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "kit",
+    "caixa": "1",
+    "local": "Painel de Ferramentas / Gaveta de Ferramentas Manuais de Precisão"
+  },
+  "caracteristicas_destacadas": [
+    "Fabricado em aço inoxidável com tratamento anti-ferrugem",
+    "Alta rigidez mecânica (não deforma facilmente ao alavancar travas plásticas duras)",
+    "Pontas duplas com geometrias distintas para máxima versatilidade na abertura de eletrônicos",
+    "Facilita a abertura de carcaças de celulares, notebooks e módulos de automação selados sem danificar as bordas plásticas"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "componente": {
+    "part_number": "SOLDA-FIO-COBIX-22G-1MM",
+    "marca": "Cobix",
+    "linha_produto": "Especial para Reparos em Aparelhos Eletrônicos",
+    "descricao_comercial": "Solda em Fio para Eletrônica com Fluxo Interno RA",
+    "fabricante_original": "COBIX Ind. Com. Metais Ltda",
+    "cnpj_fabricante": "61.533.865/0001-99",
+    "origem": "Indústria Brasileira",
+    "categoria": "Ferramentas e Consumíveis / Química e Soldagem",
+    "subcategoria": "Ligas de Estanho para Soldagem Eletrônica",
+    "estado": "Em uso (No tubo original)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "quantidade_nominal_peso": "22 g",
+    "unidade_medida": "tubo",
+    "codigo_barras": "7898249430015",
+    "certificacao_sistema": "ISO 9001",
+    "validade": "Indeterminada",
+    "caixa": "1",
+    "local": "Organizador de Insumos de Solda / Gaveta de Consumíveis Rápidos"
+  },
+  "especificacoes_tecnicas": {
+    "liga_metalica": {
+      "composicao_tipica": "Sn60 / Pb40 (60% Estanho / 40% Chumbo)",
+      "contem_chumbo": true,
+      "advertencia_seguranca": "Nocivo à saúde. Contém Chumbo (Pb). Usar sob ventilação adequada, preferencialmente com máscara, luvas e óculos de proteção"
+    },
+    "dimensoes": {
+      "diametro_fio": "1.0 mm"
+    },
+    "fluxo_interno": {
+      "tipo_fluxo": "Fluxo RA (Rosin Activated / Resina Ativada)",
+      "funcao": "Ação decapante eficiente que remove a oxidação dos terminais durante o aquecimento, garantindo excelente molhabilidade e aderência da solda"
+    },
+    "propriedades_termicas_estimadas": {
+      "ponto_de_fusao": "Aproximadamente 183°C a 190°C"
+    }
+  },
+  "aplicacoes_comuns_bancada": [
+    "Soldagem de componentes através de furo (Through-Hole) em placas de circuito impresso",
+    "Emendas de fios, cabos elétricos e conectores robustos na bancada",
+    "Reparos rápidos em circuitos eletrônicos gerais, eletrodomésticos e automação de pequeno porte"
+  ]
+}

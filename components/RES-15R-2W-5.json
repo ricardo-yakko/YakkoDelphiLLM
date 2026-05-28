@@ -1,0 +1,33 @@
+{
+  "componente": {
+    "part_number": "RES-15R-2W-5",
+    "fabricante_original": "Genérico / Industrial",
+    "categoria": "Componentes Passivos / Resistores",
+    "subcategoria": "Resistor de Filme de Carbono ou Óxido Metálico",
+    "tipo_montagem": "PTH (Through-Hole / Terminal Axial Pré-formado)",
+    "estado": "Novo (Excedente de lote / Sucata de luxo)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "unidades",
+    "caixa": "1",
+    "local": "B1"
+  },
+  "especificacoes_tecnicas": {
+    "valor_nominal": 15.0,
+    "unidade_resistencia": "Ohms",
+    "tolerancia_percentual": 5.0,
+    "potencia_estimada_dissipacao": "1W a 2W (Baseado nas dimensões visuais do corpo)",
+    "sequencia_cores_leitura": [
+      "Marrom (1)",
+      "Verde (5)",
+      "Preto (x1)",
+      "Ouro (±5%)"
+    ]
+  },
+  "aplicacoes_comuns": [
+    "Resistor de amortecimento (Snubber) em fontes chaveadas secundárias",
+    "Limitador de corrente suave para drivers e acionamentos",
+    "Filtragem simples de pequenos ruídos em circuitos de áudio ou fontes lineares"
+  ]
+}

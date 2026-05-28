@@ -1,0 +1,46 @@
+{
+  "componente": {
+    "part_number": "033.0006.00003",
+    "sku_part_number": "033.0006.00003",
+    "fabricante_original": "MXT",
+    "marca": "MXT",
+    "modelo": "Sugador de Solda Alumínio MXT",
+    "descricao_comercial": "Sugador de Solda Manual de Alta Sucção - Corpo em Alumínio",
+    "importado_por": "CNPJ: 39.828.926/0003-77",
+    "origem": "China",
+    "categoria": "Ferramentas de Bancada / Equipamentos de Dessoldagem",
+    "subcategoria": "Ferramentas Manuais de Sucção de Estanho",
+    "estado": "Novo (Na embalagem blister original)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "unidade",
+    "lote_controle": "408221",
+    "codigo_barras": "7899471825532",
+    "garantia_meses": 3,
+    "caixa": "1",
+    "local": "Painel de Ferramentas / Suporte de Ferramentas de Soldagem"
+  },
+  "especificacoes_tecnicas": {
+    "material_composicao": [
+      "Alumínio (Corpo cilíndrico)",
+      "Cobre",
+      "Ferro",
+      "PP (Polipropileno)"
+    ],
+    "tipo_acionamento": "Mecânico por mola helicoidal interna de alta pressão",
+    "bico_aspirador": "Bico de teflon (PTFE) substituível, resistente ao calor do ferro de solda",
+    "caracteristicas_design": [
+      "Corpo leve e compacto",
+      "Textura recartilhada no alumínio para melhor aderência e firmeza durante o uso",
+      "Botão de gatilho de rápido disparo"
+    ]
+  },
+  "instrucoes_de_operacao_bancada": [
+    "1. Encostar a ponta do ferro de solda no terminal do componente até que a solda derreta completamente.",
+    "2. Armar o sugador de solda posicionando o acionador em direção ao bico até travar.",
+    "3. Colocar o bico de teflon do sugador diretamente contra a solda ainda derretida.",
+    "4. Pressionar o botão gatilho para liberar a mola; o acionador retornará à posição original, criando o vácuo que suga o estanho para o interior do cilindro."
+  ],
+  "Dica_de_manutencao_bancada": "Para garantir a durabilidade e o poder de vácuo, limpe periodicamente o reservatório interno de alumínio removendo os resíduos de estanho fragmentados e lubrifique levemente o anel o-ring do êmbolo com graxa de silicone."
+}

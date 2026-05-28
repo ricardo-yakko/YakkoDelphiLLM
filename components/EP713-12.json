@@ -1,0 +1,28 @@
+{
+  "componente": {
+    "part_number": "EP713-12",
+    "fabricante_original": "HASCO / HASCD",
+    "categoria": "Semicondutores / Circuitos Integrados",
+    "subcategoria": "Filtro Ativo Analógico / Rede de Atraso",
+    "encapsulamento": "SIP (Single In-line Package)",
+    "estado": "Novo (Excedente de lote industrial / Sucata de luxo)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "unidades",
+    "caixa": "1",
+    "local": "A1"
+  },
+  "especificacoes_tecnicas": {
+    "tipo_de_filtro": "Passa-Baixas (Low-Pass Filter)",
+    "ordem_do_filtro": "5ª Ordem (High-Attenuation Slope)",
+    "aplicacao_sinal": "Áudio Analógico / Telecomunicações",
+    "caracteristica_fisica": "Filtro ativo integrado de alta precisão"
+  },
+  "aplicacoes_diy": [
+    "Filtro anti-aliasing para entradas analógicas de microcontroladores (Arduino/ESP32)",
+    "Filtro de saída para DACs ou geradores de áudio PWM para remover ruído de amostragem",
+    "Processamento e equalização de sinal de áudio analógico",
+    "Projetos de sintetizadores analógicos DIY"
+  ]
+}

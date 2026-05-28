@@ -1,0 +1,29 @@
+{
+  "componente": {
+    "part_number": "TR-30905",
+    "part_number_oficial": "RALP TR 30905",
+    "fabricante_original": "RALP",
+    "categoria": "Componentes Magnéticos / Indutivos",
+    "subcategoria": "Transformador de Áudio e Sinal em Miniatura",
+    "tipo_montagem": "PTH (Through-Hole / Montagem em Placa)",
+    "estado": "Novo (Excedente de lote / Componente de estoque antigo)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "unidades",
+    "caixa": "1",
+    "local": "A1"
+  },
+  "especificacoes_tecnicas_estimadas": {
+    "configuracao_dos_pinos": "6 pinos (3 primários + 3 secundários com Center Tape)",
+    "tipo_de_nucleo": "Lâminas de Silício-Ferro (E-I)",
+    "aplicacao_alvo": "Acoplamento de áudio, isolamento de linha de sinal ou casamento de impedância",
+    "isolamento_galvanico": "Presente entre primário e secundário"
+  },
+  "diagnostico_de_bancada_sugerido": {
+    "passo_1": "Medir resistência ôhmica entre pino 1 e pino 3 (extremidades do primário)",
+    "passo_2": "Medir resistência ôhmica entre pino 4 e pino 6 (extremidades do secundário)",
+    "passo_3": "Confirmar se o pino central (2 e 5) divide a resistência simetricamente",
+    "passo_4": "Verificar isolamento de megagem (aberto) entre os dois lados isolados"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "componente": {
+    "part_number": "F423",
+    "part_number_oficial": "BF423",
+    "fabricante_original": "Fairchild Semiconductor / onsemi",
+    "categoria": "Semicondutores / Transistores",
+    "subcategoria": "Transistor Bipolar de Junção (BJT) PNP de Alta Tensão",
+    "encapsulamento": "TO-92 (Plástico de 3 pinos)",
+    "estado": "Novo (Excedente de lote industrial / Sucata de luxo)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "unidades",
+    "caixa": "1",
+    "local": "A1"
+  },
+  "especificacoes_tecnicas_datasheet": {
+    "tensao_maxima_coletor_emissor_vceo": -250.0,
+    "tensao_maxima_coletor_base_vcbo": -250.0,
+    "unidade_tensao": "Volts",
+    "corrente_maxima_continua_ic": -0.5,
+    "unidade_corrente": "Amperes (500mA)",
+    "potencia_maxima_dissipada_pd": 830.0,
+    "unidade_potencia": "miliWatts (mW a Tamb = 25°C)",
+    "ganho_hfe_minimo": 50,
+    "frequencia_de_transicao_ft_minima": 60.0,
+    "unidade_frequencia": "MegaHertz (MHz)"
+  },
+  "pinagem_oficial_visto_de_frente": {
+    "posicao_leitura": "Olhando para o lado plano onde o código está gravado, com os pinos para baixo",
+    "pino_1_esquerda": "Emissor (E)",
+    "pino_2_centro": "Coletor (C)",
+    "pino_3_direita": "Base (B)"
+  },
+  "caracteristicas_de_projeto": {
+    "recursos": [
+      "Excelente linearidade de ganho em alta tensão",
+      "Baixa capacitância de saída, ideal para circuitos de alta frequência e estágios de vídeo",
+      "Casamento perfeito com o transistor NPN BF422 para configurações simétricas"
+    ]
+  }
+}

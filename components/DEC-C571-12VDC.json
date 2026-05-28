@@ -1,0 +1,40 @@
+{
+  "componente": {
+    "part_number": "DEC-C571-12VDC",
+    "fabricante_original": "DEC (Daiichi Electric Co. / CHINA)",
+    "categoria": "Eletromecânicos / Relés",
+    "subcategoria": "Relé de Potência para PCB",
+    "configuracao_contatos": "SPDT (1 Polo / 1 Contato Reversível)",
+    "encapsulamento": "Selado tipo cubo para montagem PTH",
+    "estado": "Novo (Excedente de lote industrial / Sucata de luxo)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "unidades",
+    "caixa": "1",
+    "local": "A1"
+  },
+  "especificacoes_tecnicas_bobina": {
+    "tensao_nominal_bobina": 12.0,
+    "tipo_tensao_bobina": "VDC (Corrente Contínua)"
+  },
+  "capacidade_dos_contatos": {
+    "corrente_maxima_ac": 8.0,
+    "tensao_maxima_ac": 250.0,
+    "corrente_maxima_dc": 8.0,
+    "tensao_maxima_dc": 30.0,
+    "corrente_de_surto_inrush_maxima": 60.0,
+    "classificacao_de_carga_especial": "TV-5 (Alta tolerância a picos de partida)"
+  },
+  "pinagem_padrao_esperada_base": {
+    "pinos_da_bobina": "2 pinos na parte traseira para alimentar os 12V (sem polaridade fixa)",
+    "pino_comum": "1 pino central que recebe a fase ou linha principal",
+    "pino_nf_normally_closed": "1 pino que fica conectado ao Comum enquanto o relé está desligado",
+    "pino_na_normally_open": "1 pino que só recebe contato quando a bobina de 12V é energizada"
+  },
+  "aplicacoes_comuns": [
+    "Módulos de automação residencial (IoT com ESP32 / Arduino)",
+    "Placas de comando de portão eletrônico e ar-condicionado",
+    "Circuitos de proteção e isolamento galvânico entre lógica e potência"
+  ]
+}

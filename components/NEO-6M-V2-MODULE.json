@@ -1,0 +1,37 @@
+{
+  "componente": {
+    "part_number": "NEO-6M-V2-MODULE",
+    "sku_etiqueta": "CP-00712",
+    "descricao_comercial": "Módulo GPS Neo-6M V2 com Antena Cerâmica para Projetos",
+    "fabricante_original": "u-blox",
+    "categoria": "Módulos de Comunicação / Sensores",
+    "subcategoria": "Módulo de Navegação e Localização Satendital (GPS)",
+    "estado": "Novo (Na embalagem antiestática lacrada)"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "unidade",
+    "caixa": "1",
+    "local": "Gaveteiro de Módulos / Comunicação, GPS e Wireless"
+  },
+  "especificacoes_tecnicas_oficiais": {
+    "chipset_principal": "u-blox NEO-6M-0-001",
+    "tensao_alimentacao_modulo": "3.3V a 5.0VDC (Possui regulador de tensão onboard)",
+    "tensao_logica_sinal_io": "3.3VDC (Recomenda-se divisor de tensão ou level shifter se usar com MCU 5V no pino RX)",
+    "protocolo_comunicacao": "UART Serial (Assíncrona)",
+    "baud_rate_padrao": 9600,
+    "formato_dados_saida": "NMEA-0183 v2.3",
+    "frequencia_atualizacao": "1 Hz a 5 Hz",
+    "canais_rastreamento": 50,
+    "precisao_posicionamento_horizontal": "Aproximadamente 2.5 metros"
+  },
+  "itens_inclusos_no_pacote": [
+    "Placa de circuito impresso com o receptor NEO-6M e circuito de suporte",
+    "Antena cerâmica de alto ganho com cabo pigtail e conector U.FL pré-instalado"
+  ],
+  "aplicacoes_comuns": [
+    "Sistemas de rastreamento veicular e telemetria automotiva",
+    "Navegação autônoma de robôs móveis, drones e veículos rádio-controlados",
+    "Estações meteorológicas ou relógios de altíssima precisão sincronizados via satélite (sinal PPS)"
+  ]
+}

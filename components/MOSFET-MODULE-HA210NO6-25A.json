@@ -1,0 +1,46 @@
+{
+  "componente": {
+    "part_number": "MOSFET-MODULE-HA210NO6-25A",
+    "part_number_comum": "MOSFET-MODULE-HA210NO6-25A",
+    "descricao_comercial": "Módulo Driver MOSFET de Potência 25A para Mesa Aquecida (Hotbed) Impressora 3D",
+    "categoria": "Componentes e Módulos de Potência / Eletrônica para Impressão 3D",
+    "subcategoria": "Controlador de Carga Térmica / Relé de Estado Sólido Baseado em MOSFET",
+    "estado": "Novo"
+  },
+  "inventario": {
+    "quantidade_disponivel": 1,
+    "unidade_medida": "unidade",
+    "caixa": "1",
+    "local": "Gaveteiro de Módulos / Peças de Impressora 3D e CNC"
+  },
+  "especificacoes_eletricas_e_termicas": {
+    "corrente_maxima_nominal": "25 A",
+    "corrente_maxima_com_refrigeracao_ativa": "Até 30 A (Exige ventilação forçada)",
+    "tensao_operacao_potencia": "12VDC a 24VDC",
+    "sinal_de_controle_trigger": "5VDC a 24VDC (Compatível com saídas PWM de placas de controle como RAMPS, MKS, SKR, etc.)",
+    "mosfet_embarcado": "Análise visual indica encapsulamento TO-247 / TO-220 de ultra-baixa resistência interna (RDS(on)) montado em dissipador de alumínio anodizado preto"
+  },
+  "mapeamento_de_bornes": {
+    "tipo_terminais": "Bornes de parafuso reforçados com barreiras físicas de isolamento",
+    "pinagem_potencia": [
+      {
+        "borne": "DC IN + / -",
+        "funcao": "Entrada de alimentação principal vinda da fonte (12V/24V)"
+      },
+      {
+        "borne": "HOT BED + / -",
+        "funcao": "Saída de potência controlada para os terminais da mesa aquecida"
+      }
+    ],
+    "pinagem_sinal": {
+      "tipo_conector": "JST-XH 2 pinos",
+      "funcao": "Entrada do sinal de controle óptico/lógico (conectado diretamente à saída de Hotbed da placa-mãe)"
+    }
+  },
+  "vantagens_e_aplicacoes": [
+    "Alivia a carga de corrente elétrica da placa controladora principal da impressora 3D, evitando superaquecimento e queima dos conectores nativos",
+    "Permite o uso estável de fontes de 24V e mesas aquecidas de alta potência sem risco de quedas de tensão no sistema lógico",
+    "Isolação eficiente que protege o microcontrolador da impressora contra transientes e picos de corrente da linha de potência",
+    "Indispensável para upgrades em impressoras que utilizam mesas aquecidas grandes (como na linha Ender 3, CR-10 ou similares com área expandida)"
+  ]
+}
