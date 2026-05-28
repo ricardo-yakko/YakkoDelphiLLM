@@ -4,6 +4,9 @@
 *.dll
 *.bpl
 *.dcp
+*.bpi
+*.lib
+*.hpp
 *.map
 *.rsm
 *.local
@@ -21,6 +24,8 @@ Win64/
 Debug/
 Release/
 build/
+packages/local-dcp/
+packages/local-hpp/
 
 # Temporary/log/cache files
 *.log
@@ -29,6 +34,10 @@ build/
 *.cache
 *.sqlite
 *.sqlite3
+
+# Model files
+*.gguf
+*.gguf.*
 
 # IDE/editor
 .vscode/
