@@ -1,0 +1,36 @@
+# Delphi build artifacts
+*.dcu
+*.exe
+*.dll
+*.bpl
+*.dcp
+*.map
+*.rsm
+*.local
+*.identcache
+*.stat
+
+# Delphi backup/history
+__history/
+__recovery/
+*.~*
+
+# Build output folders
+Win32/
+Win64/
+Debug/
+Release/
+build/
+
+# Temporary/log/cache files
+*.log
+*.tmp
+*.bak
+*.cache
+*.sqlite
+*.sqlite3
+
+# IDE/editor
+.vscode/
+.DS_Store
+Thumbs.db

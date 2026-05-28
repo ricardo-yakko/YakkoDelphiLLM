@@ -1,0 +1,28 @@
+﻿package YakkoRT;
+
+requires
+  rtl,
+  vcl;
+
+contains
+  uYakkoLLM in '..\src\runtime\uYakkoLLM.pas',
+  uYakkoLlamaTypes in '..\src\runtime\uYakkoLlamaTypes.pas',
+  uYakkoAgenteComponent in '..\src\runtime\uYakkoAgenteComponent.pas',
+  uYakkoChatComponent in '..\src\runtime\uYakkoChatComponent.pas',
+  uYakkoChatTemplateComponent in '..\src\runtime\uYakkoChatTemplateComponent.pas',
+  uYakkoContextoComponent in '..\src\runtime\uYakkoContextoComponent.pas',
+  uYakkoDllComponent in '..\src\runtime\uYakkoDllComponent.pas',
+  uYakkoEngineComponent in '..\src\runtime\uYakkoEngineComponent.pas',
+  uYakkoFullExportsComponent in '..\src\runtime\uYakkoFullExportsComponent.pas',
+  uYakkoGenerationEventsComponent in '..\src\runtime\uYakkoGenerationEventsComponent.pas',
+  uYakkoGeradorComponent in '..\src\runtime\uYakkoGeradorComponent.pas',
+  uYakkoInferenceConfigComponent in '..\src\runtime\uYakkoInferenceConfigComponent.pas',
+  uYakkoInferenceOrchestration in '..\src\runtime\uYakkoInferenceOrchestration.pas',
+  uYakkoMemoryManagerComponent in '..\src\runtime\uYakkoMemoryManagerComponent.pas',
+  uYakkoSessaoComponent in '..\src\runtime\uYakkoSessaoComponent.pas',
+  uYakkoToolManagerComponent in '..\src\runtime\uYakkoToolManagerComponent.pas',
+  uYakkoTokenizerComponent in '..\src\runtime\uYakkoTokenizerComponent.pas',
+  uYakkoModeloComponent in '..\src\runtime\uYakkoModeloComponent.pas';
+
+end.
+

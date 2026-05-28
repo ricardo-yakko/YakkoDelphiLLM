@@ -1,0 +1,60 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{4AEDE5AE-4D10-40C0-83AC-324A87E1C9D8}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="packages\Yakko.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="packages\YakkoRT.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="apps\YakkoStudio\YakkoStudio.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Yakko">
+        <MSBuild Projects="packages\Yakko.dproj"/>
+    </Target>
+    <Target Name="Yakko:Clean">
+        <MSBuild Projects="packages\Yakko.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Yakko:Make">
+        <MSBuild Projects="packages\Yakko.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="YakkoRT">
+        <MSBuild Projects="packages\YakkoRT.dproj"/>
+    </Target>
+    <Target Name="YakkoRT:Clean">
+        <MSBuild Projects="packages\YakkoRT.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="YakkoRT:Make">
+        <MSBuild Projects="packages\YakkoRT.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="YakkoStudio">
+        <MSBuild Projects="apps\YakkoStudio\YakkoStudio.dproj"/>
+    </Target>
+    <Target Name="YakkoStudio:Clean">
+        <MSBuild Projects="apps\YakkoStudio\YakkoStudio.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="YakkoStudio:Make">
+        <MSBuild Projects="apps\YakkoStudio\YakkoStudio.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Yakko;YakkoRT;YakkoStudio"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Yakko:Clean;YakkoRT:Clean;YakkoStudio:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Yakko:Make;YakkoRT:Make;YakkoStudio:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
