@@ -1,0 +1,74 @@
+
+# Arquitetura e Diagrama de Classes — YakkoDelphiLLM
+
+Documento técnico consolidado da arquitetura interna do projeto YakkoDelphiLLM.
+
+## Visão Geral
+
+O projeto é estruturado em camadas responsáveis por:
+
+- Carregamento dinâmico da DLL do llama.cpp
+- Gerenciamento de modelos GGUF
+- Controle de contexto e sessão
+- Tokenização e templates de chat
+- Inferência streaming
+- Sistema de ferramentas (Tools)
+- Memória vetorial / embeddings
+- RAG (Retrieval Augmented Generation)
+
+## Componentes Principais
+
+### Runtime
+
+- TYakkoDll
+- TYakkoFullExports
+- TYakkoModelo
+- TYakkoContexto
+
+### Inferência
+
+- TYakkoInferenceConfig
+- TYakkoSamplingParams
+- TYakkoSessao
+- TYakkoGenerationEvents
+- TYakkoCancellationToken
+
+### Conversação
+
+- TYakkoChatTemplate
+- TYakkoTokenizer
+
+## Pipeline de Geração
+
+1. Usuário envia mensagem
+2. BuildPrompt()
+3. Tokenize()
+4. Avaliação do contexto
+5. Inferência llama.cpp
+6. Streaming de tokens
+7. Finalização
+
+## Sistema RAG
+
+Fluxo:
+
+Documentos -> Chunks -> Embeddings -> Base Vetorial -> Busca Semântica -> Prompt Final -> LLM
+
+## Pontos Fortes
+
+- Arquitetura modular
+- Separação de responsabilidades
+- Compatibilidade com GGUF e llama.cpp
+- Tool calling
+- Streaming
+- Embeddings
+- RAG
+- Reasoning models
+
+## Evoluções Futuras
+
+- Scheduler de geração
+- Cache semântico
+- Multi-session manager
+- Distributed inference
+- Multi-model orchestration
