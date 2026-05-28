@@ -28,6 +28,7 @@ contains
   Yakko.Inference.Pipeline in '..\src\runtime\Yakko.Inference.Pipeline.pas',
   Yakko.Generation.Controller in '..\src\runtime\Yakko.Generation.Controller.pas',
   Yakko.Runtime.Bridge in '..\src\runtime\Yakko.Runtime.Bridge.pas',
+  Yakko.Runtime.Diagnostics in '..\src\runtime\Yakko.Runtime.Diagnostics.pas',
   Yakko.Template.Provider in '..\src\runtime\Yakko.Template.Provider.pas',
   uYakkoSessaoComponent in '..\src\runtime\uYakkoSessaoComponent.pas',
   uYakkoToolManagerComponent in '..\src\runtime\uYakkoToolManagerComponent.pas',
