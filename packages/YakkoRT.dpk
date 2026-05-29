@@ -33,6 +33,7 @@ contains
   Yakko.Runtime.Kernel in '..\src\runtime\Yakko.Runtime.Kernel.pas',
   Yakko.Runtime.Orchestrator in '..\src\runtime\Yakko.Runtime.Orchestrator.pas',
   Yakko.Runtime.Registry in '..\src\runtime\Yakko.Runtime.Registry.pas',
+  Yakko.Runtime.Capabilities in '..\src\runtime\Yakko.Runtime.Capabilities.pas',
   Yakko.Runtime.Policies in '..\src\runtime\Yakko.Runtime.Policies.pas',
   Yakko.Template.Provider in '..\src\runtime\Yakko.Template.Provider.pas',
   uYakkoSessaoComponent in '..\src\runtime\uYakkoSessaoComponent.pas',
