@@ -37,6 +37,7 @@ type
     BtnReiniciarSessao: TButton;
     BtnTestarTool: TButton;
     BtnSimularConversa: TButton;
+    BtnRagModal: TButton;
     CkUseThink: TCheckBox;
     CkSanitize: TCheckBox;
     CbTemplatePersona: TComboBox;
@@ -86,7 +87,6 @@ type
   private
     FToolRegistrada: Boolean;
     FSilenciarEventosGeracao: Boolean;
-    FRagModalButton: TButton;
     function StrToIntPadrao(const AValue: string; ADefault: Integer): Integer;
     function StrToFloatPadrao(const AValue: string; ADefault: Double): Double;
     procedure AplicarConfiguracaoUI;
@@ -168,7 +168,6 @@ procedure TYakkoStudioMainForm.FormCreate(Sender: TObject);
 begin
   FToolRegistrada := False;
   FSilenciarEventosGeracao := False;
-  FRagModalButton := nil;
   EdNCtx.Text := '4096';
   EdMaxTokens.Text := '512';
   EdTemperatura.Text := '0.7';
@@ -184,16 +183,6 @@ begin
   CkSanitize.Checked := True;
   MemoSistema.Lines.Text := GetTemplateSistemaSelecionado;
   MemoPrompt.Lines.Text := 'Explique rapidamente como usar TYakkoEngine com TYakkoChat.';
-
-  FRagModalButton := TButton.Create(Self);
-  FRagModalButton.Parent := Self;
-  FRagModalButton.Left := 424;
-  FRagModalButton.Top := 551;
-  FRagModalButton.Width := 113;
-  FRagModalButton.Height := 30;
-  FRagModalButton.Caption := 'RAG / Embeddings';
-  FRagModalButton.TabOrder := 30;
-  FRagModalButton.OnClick := BtnRagModalClick;
 
   SetStatus('Pronto para inicializar.');
   ConectarEventos;

@@ -32,17 +32,6 @@ type
   end;
 
   TYakkoStudioRagModalForm = class(TForm)
-  private
-    FEngine: TYakkoEngine;
-    FEmbeddingExports: TYakkoFullExports;
-    FEmbeddingModelo: TYakkoModelo;
-    FEmbeddingContexto: TYakkoContexto;
-    FEmbeddingModelPath: string;
-    FFiles: TStringList;
-    FChunks: TArray<TRagChunk>;
-    FVectorStore: TYakkoVectorStoreSQLite;
-    FWaitCursor: TFDGUIxWaitCursor;
-
     LbArquivos: TLabel;
     LbPergunta: TLabel;
     LbTopK: TLabel;
@@ -60,14 +49,18 @@ type
 
     EdTopK: TEdit;
     EdMaxTokens: TEdit;
+  private
+    FEngine: TYakkoEngine;
+    FEmbeddingExports: TYakkoFullExports;
+    FEmbeddingModelo: TYakkoModelo;
+    FEmbeddingContexto: TYakkoContexto;
+    FEmbeddingModelPath: string;
+    FFiles: TStringList;
+    FChunks: TArray<TRagChunk>;
+    FVectorStore: TYakkoVectorStoreSQLite;
+    FWaitCursor: TFDGUIxWaitCursor;
 
-    procedure ConfigureUi;
     procedure UpdateStatus(const AText: string);
-    procedure BtnSelecionarArquivosClick(Sender: TObject);
-    procedure BtnGerarEmbeddingsClick(Sender: TObject);
-    procedure BtnPerguntarClick(Sender: TObject);
-    procedure BtnFecharClick(Sender: TObject);
-
     procedure EnsureEmbeddingRuntime;
     function EnsureReadyForEmbedding: Boolean;
     function ResolveEmbeddingModelPath: string;
@@ -81,6 +74,13 @@ type
     function GetSelectedFilesArray: TArray<string>;
     function BuildContextFromTopK(const AQuestionEmbedding: TArray<Single>; ATopK: Integer;
       out ASelectedCount: Integer; out ABestScore: Single): string;
+
+  published
+    procedure BtnSelecionarArquivosClick(Sender: TObject);
+    procedure BtnGerarEmbeddingsClick(Sender: TObject);
+    procedure BtnPerguntarClick(Sender: TObject);
+    procedure BtnFecharClick(Sender: TObject);
+
   public
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
@@ -93,6 +93,8 @@ type
   end;
 
 implementation
+
+{$R *.dfm}
 
 type
   TLlamaToken = Int32;
@@ -129,7 +131,7 @@ type
 
 constructor TYakkoStudioRagModalForm.Create(AOwner: TComponent);
 begin
-  inherited CreateNew(AOwner);
+  inherited Create(AOwner);
   FEngine := nil;
   FEmbeddingExports := nil;
   FEmbeddingModelo := nil;
@@ -140,7 +142,6 @@ begin
   FWaitCursor := TFDGUIxWaitCursor.Create(Self);
   FWaitCursor.Provider := 'Forms';
   SetLength(FChunks, 0);
-  ConfigureUi;
 end;
 
 destructor TYakkoStudioRagModalForm.Destroy;
@@ -156,122 +157,6 @@ begin
   FreeAndNil(FVectorStore);
   FreeAndNil(FFiles);
   inherited;
-end;
-
-procedure TYakkoStudioRagModalForm.ConfigureUi;
-begin
-  Caption := 'RAG com Embeddings';
-  Position := poScreenCenter;
-  BorderStyle := bsDialog;
-  Width := 980;
-  Height := 700;
-
-  LbArquivos := TLabel.Create(Self);
-  LbArquivos.Parent := Self;
-  LbArquivos.Left := 16;
-  LbArquivos.Top := 12;
-  LbArquivos.Caption := 'Arquivos para indexar';
-
-  MemoArquivos := TMemo.Create(Self);
-  MemoArquivos.Parent := Self;
-  MemoArquivos.Left := 16;
-  MemoArquivos.Top := 32;
-  MemoArquivos.Width := 460;
-  MemoArquivos.Height := 220;
-  MemoArquivos.ReadOnly := True;
-  MemoArquivos.ScrollBars := ssVertical;
-
-  BtnSelecionarArquivos := TButton.Create(Self);
-  BtnSelecionarArquivos.Parent := Self;
-  BtnSelecionarArquivos.Left := 16;
-  BtnSelecionarArquivos.Top := 262;
-  BtnSelecionarArquivos.Width := 145;
-  BtnSelecionarArquivos.Height := 28;
-  BtnSelecionarArquivos.Caption := 'Selecionar Arquivos';
-  BtnSelecionarArquivos.OnClick := BtnSelecionarArquivosClick;
-
-  BtnGerarEmbeddings := TButton.Create(Self);
-  BtnGerarEmbeddings.Parent := Self;
-  BtnGerarEmbeddings.Left := 172;
-  BtnGerarEmbeddings.Top := 262;
-  BtnGerarEmbeddings.Width := 145;
-  BtnGerarEmbeddings.Height := 28;
-  BtnGerarEmbeddings.Caption := 'Gerar Embeddings';
-  BtnGerarEmbeddings.OnClick := BtnGerarEmbeddingsClick;
-
-  LbTopK := TLabel.Create(Self);
-  LbTopK.Parent := Self;
-  LbTopK.Left := 332;
-  LbTopK.Top := 268;
-  LbTopK.Caption := 'TopK';
-
-  EdTopK := TEdit.Create(Self);
-  EdTopK.Parent := Self;
-  EdTopK.Left := 372;
-  EdTopK.Top := 264;
-  EdTopK.Width := 46;
-  EdTopK.Text := '4';
-
-  LbMaxTokens := TLabel.Create(Self);
-  LbMaxTokens.Parent := Self;
-  LbMaxTokens.Left := 426;
-  LbMaxTokens.Top := 268;
-  LbMaxTokens.Caption := 'MaxTokens';
-
-  EdMaxTokens := TEdit.Create(Self);
-  EdMaxTokens.Parent := Self;
-  EdMaxTokens.Left := 494;
-  EdMaxTokens.Top := 264;
-  EdMaxTokens.Width := 62;
-  EdMaxTokens.Text := '1024';
-
-  LbPergunta := TLabel.Create(Self);
-  LbPergunta.Parent := Self;
-  LbPergunta.Left := 496;
-  LbPergunta.Top := 12;
-  LbPergunta.Caption := 'Pergunta sobre os embeddings';
-
-  MemoPergunta := TMemo.Create(Self);
-  MemoPergunta.Parent := Self;
-  MemoPergunta.Left := 496;
-  MemoPergunta.Top := 32;
-  MemoPergunta.Width := 460;
-  MemoPergunta.Height := 120;
-  MemoPergunta.ScrollBars := ssVertical;
-  MemoPergunta.Lines.Text := 'Qual TV foi mencionada e qual faixa de preco aparece nos arquivos?';
-
-  BtnPerguntar := TButton.Create(Self);
-  BtnPerguntar.Parent := Self;
-  BtnPerguntar.Left := 496;
-  BtnPerguntar.Top := 162;
-  BtnPerguntar.Width := 145;
-  BtnPerguntar.Height := 28;
-  BtnPerguntar.Caption := 'Perguntar (RAG)';
-  BtnPerguntar.OnClick := BtnPerguntarClick;
-
-  BtnFechar := TButton.Create(Self);
-  BtnFechar.Parent := Self;
-  BtnFechar.Left := 811;
-  BtnFechar.Top := 162;
-  BtnFechar.Width := 145;
-  BtnFechar.Height := 28;
-  BtnFechar.Caption := 'Fechar';
-  BtnFechar.OnClick := BtnFecharClick;
-
-  MemoResposta := TMemo.Create(Self);
-  MemoResposta.Parent := Self;
-  MemoResposta.Left := 496;
-  MemoResposta.Top := 200;
-  MemoResposta.Width := 460;
-  MemoResposta.Height := 444;
-  MemoResposta.ScrollBars := ssVertical;
-  MemoResposta.ReadOnly := True;
-
-  LbStatus := TLabel.Create(Self);
-  LbStatus.Parent := Self;
-  LbStatus.Left := 16;
-  LbStatus.Top := 620;
-  LbStatus.Caption := 'Status: aguardando';
 end;
 
 procedure TYakkoStudioRagModalForm.UpdateStatus(const AText: string);

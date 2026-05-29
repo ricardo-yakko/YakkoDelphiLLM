@@ -104,7 +104,7 @@ type
     procedure AppendRAG;
     procedure AppendReasoning;
     procedure ApplyContextLimits;
-    function BuildMessageText(AMessage: TYakkoMessage): string; deprecated 'Legacy helper kept temporarily while migration is in progress.';
+//    function BuildMessageText(AMessage: TYakkoMessage): string; deprecated 'Legacy helper kept temporarily while migration is in progress.';
   public
     constructor Create;
     destructor Destroy; override;
@@ -349,15 +349,15 @@ begin
   { TODO: implement token attribution once tokenizer-level tracing is introduced. }
 end;
 
-function TYakkoPromptBuilder.BuildMessageText(AMessage: TYakkoMessage): string;
-begin
-  if not Assigned(AMessage) then
-    Exit('');
-
-  Result := Trim(AMessage.Content);
-
-  { TODO: remove this legacy helper after all callers migrate to PromptDocument. }
-end;
+//function TYakkoPromptBuilder.BuildMessageText(AMessage: TYakkoMessage): string;
+//begin
+//  if not Assigned(AMessage) then
+//    Exit('');
+//
+//  Result := Trim(AMessage.Content);
+//
+//  { TODO: remove this legacy helper after all callers migrate to PromptDocument. }
+//end;
 
 function TYakkoPromptBuilder.Build(ARequest: TYakkoPromptBuildRequest): TYakkoPromptBuildResult;
 var

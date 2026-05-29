@@ -30,6 +30,7 @@ contains
   Yakko.Runtime.Bridge in '..\src\runtime\Yakko.Runtime.Bridge.pas',
   Yakko.Runtime.Diagnostics in '..\src\runtime\Yakko.Runtime.Diagnostics.pas',
   Yakko.Runtime.Hooks in '..\src\runtime\Yakko.Runtime.Hooks.pas',
+  Yakko.Runtime.Orchestrator in '..\src\runtime\Yakko.Runtime.Orchestrator.pas',
   Yakko.Runtime.Policies in '..\src\runtime\Yakko.Runtime.Policies.pas',
   Yakko.Template.Provider in '..\src\runtime\Yakko.Template.Provider.pas',
   uYakkoSessaoComponent in '..\src\runtime\uYakkoSessaoComponent.pas',

@@ -1,10 +1,10 @@
-﻿object Form1: TYakkoStudioMainForm
+object YakkoStudioMainForm: TYakkoStudioMainForm
   Left = 0
   Top = 0
-  Caption = 'Yakko - Demo Completo'
+  Caption = 'Yakko Studio - Assistente LLM'
   ClientHeight = 700
   ClientWidth = 1120
-  Color = clBtnFace
+  Color = 15527148
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
@@ -16,30 +16,54 @@
   object LbSistema: TLabel
     Left = 16
     Top = 16
-    Width = 99
+    Width = 104
     Height = 15
     Caption = 'Prompt de sistema'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object LbPrompt: TLabel
     Left = 16
     Top = 190
-    Width = 93
+    Width = 98
     Height = 15
     Caption = 'Pergunta/Prompt'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object LbTemplatePersona: TLabel
     Left = 16
     Top = 139
-    Width = 95
+    Width = 102
     Height = 15
     Caption = 'Template de perfil'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object LbSaida: TLabel
     Left = 560
     Top = 16
-    Width = 87
+    Width = 92
     Height = 15
     Caption = 'Saida/Streaming'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object LbNCtx: TLabel
     Left = 16
@@ -102,6 +126,13 @@
     Top = 37
     Width = 520
     Height = 96
+    Color = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 0
   end
   object MemoPrompt: TMemo
@@ -109,6 +140,13 @@
     Top = 211
     Width = 520
     Height = 144
+    Color = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 1
   end
   object CbTemplatePersona: TComboBox
@@ -117,6 +155,13 @@
     Width = 520
     Height = 23
     Style = csDropDownList
+    Color = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 2
     OnChange = CbTemplatePersonaChange
   end
@@ -125,6 +170,14 @@
     Top = 37
     Width = 544
     Height = 646
+    Color = 16776186
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Consolas'
+    Font.Style = []
+    ParentFont = False
+    ReadOnly = True
     ScrollBars = ssVertical
     TabOrder = 3
   end
@@ -133,6 +186,13 @@
     Top = 347
     Width = 97
     Height = 23
+    Color = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 4
     Text = '4096'
   end
@@ -141,6 +201,13 @@
     Top = 347
     Width = 105
     Height = 23
+    Color = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 5
     Text = '512'
   end
@@ -149,6 +216,13 @@
     Top = 347
     Width = 97
     Height = 23
+    Color = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 6
     Text = '0.7'
   end
@@ -157,6 +231,13 @@
     Top = 347
     Width = 73
     Height = 23
+    Color = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 7
     Text = '40'
   end
@@ -165,6 +246,13 @@
     Top = 347
     Width = 73
     Height = 23
+    Color = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 8
     Text = '0.95'
   end
@@ -245,6 +333,13 @@
     Top = 517
     Width = 97
     Height = 23
+    Color = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 17
     Text = '4'
   end
@@ -253,6 +348,13 @@
     Top = 517
     Width = 97
     Height = 23
+    Color = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 18
     Text = '10000'
   end
@@ -274,6 +376,15 @@
     TabOrder = 20
     OnClick = BtnTestarToolClick
   end
+  object BtnRagModal: TButton
+    Left = 424
+    Top = 460
+    Width = 113
+    Height = 30
+    Caption = 'RAG / Embeddings'
+    TabOrder = 21
+    OnClick = BtnRagModalClick
+  end
   object YakkoAgente1: TYakkoAgente
     Engine = YakkoEngine1
     NCtxPadrao = 512
@@ -287,7 +398,9 @@
     DllPath = 
       'C:\Users\Yakko\Documents\harmonica.io\dlls\llama-b9012-bin-win-c' +
       'uda-13.1-x64'
-    ModelPath = 'C:\Users\Yakko\Documents\harmonica.io\models\phi-4-Q5_K_M.gguf'
+    ModelPath = 
+      'C:\Users\Yakko\Documents\harmonica.io\models\qwen2.5-3b-instruct' +
+      '-q4_k_m.gguf'
     GpuLayersPadrao = 999
     Left = 224
     Top = 152
@@ -338,5 +451,3 @@
     Top = 240
   end
 end
-
-

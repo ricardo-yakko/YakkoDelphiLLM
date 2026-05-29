@@ -4,7 +4,8 @@ uses
   System.SysUtils,
   System.Classes,
   Vcl.Forms,
-  uYakkoStudioMain in 'uYakkoStudioMain.pas' {Form1};
+  uYakkoStudioMain in 'uYakkoStudioMain.pas' {Form1},
+  uYakkoStudioRagModal in 'uYakkoStudioRagModal.pas';
 
 {$R *.res}
 
