@@ -55,6 +55,7 @@ type
     procedure Add(ACapability: TYakkoRuntimeCapability);
     procedure Remove(ACapability: TYakkoRuntimeCapability);
     function Supports(ACapability: TYakkoRuntimeCapability): Boolean;
+    function ToArray: TArray<TYakkoRuntimeCapability>;
     function Clone: TYakkoRuntimeCapabilities;
     function ToDebugString: string;
   end;
@@ -130,6 +131,11 @@ end;
 function TYakkoRuntimeCapabilities.Supports(ACapability: TYakkoRuntimeCapability): Boolean;
 begin
   Result := FCapabilities.Contains(ACapability);
+end;
+
+function TYakkoRuntimeCapabilities.ToArray: TArray<TYakkoRuntimeCapability>;
+begin
+  Result := FCapabilities.ToArray;
 end;
 
 function TYakkoRuntimeCapabilities.Clone: TYakkoRuntimeCapabilities;
