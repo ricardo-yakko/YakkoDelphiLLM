@@ -40,6 +40,8 @@ type
     FComponent: string;
     FAction: string;
     FState: string;
+    FDurationMs: Int64;
+    FMetricValue: Double;
     FMetadata: TYakkoRuntimeTelemetryMetadata;
   public
     constructor Create;
@@ -54,6 +56,8 @@ type
     property Component: string read FComponent write FComponent;
     property Action: string read FAction write FAction;
     property State: string read FState write FState;
+    property DurationMs: Int64 read FDurationMs write FDurationMs;
+    property MetricValue: Double read FMetricValue write FMetricValue;
     property Metadata: TYakkoRuntimeTelemetryMetadata read FMetadata;
   end;
 
@@ -102,6 +106,8 @@ begin
   FComponent := '';
   FAction := '';
   FState := '';
+  FDurationMs := 0;
+  FMetricValue := 0;
   FMetadata := TYakkoRuntimeTelemetryMetadata.Create;
 end;
 
@@ -118,6 +124,8 @@ begin
   FComponent := '';
   FAction := '';
   FState := '';
+  FDurationMs := 0;
+  FMetricValue := 0;
   FMetadata.Clear;
 
   { TODO: add correlation fields for future cross-component telemetry stitching. }
@@ -133,6 +141,8 @@ begin
     Result.FComponent := FComponent;
     Result.FAction := FAction;
     Result.FState := FState;
+    Result.FDurationMs := FDurationMs;
+    Result.FMetricValue := FMetricValue;
     CloneStringDictionary(FMetadata, Result.FMetadata);
   except
     Result.Free;
@@ -143,12 +153,14 @@ end;
 function TYakkoRuntimeTelemetryEvent.ToDebugString: string;
 begin
   Result := Format(
-    'TYakkoRuntimeTelemetryEvent(Event=%s, Component=%s, Action=%s, State=%s, Timestamp=%s, Metadata=%d)',
+    'TYakkoRuntimeTelemetryEvent(Event=%s, Component=%s, Action=%s, State=%s, DurationMs=%d, MetricValue=%.4f, Timestamp=%s, Metadata=%d)',
     [
       FEventName,
       FComponent,
       FAction,
       FState,
+      FDurationMs,
+      FMetricValue,
       DateTimeToStr(FTimestamp),
       FMetadata.Count
     ]

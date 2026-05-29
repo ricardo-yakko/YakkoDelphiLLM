@@ -15,7 +15,12 @@ uses
   System.SysUtils,
   System.Classes,
   System.Generics.Collections,
-  Yakko.Runtime.Kernel;
+  Yakko.Runtime.Kernel,
+  Yakko.Runtime.Composition,
+  Yakko.Runtime.Registry,
+  Yakko.Runtime.Capabilities,
+  Yakko.TokenBudget,
+  Yakko.ContextWindow;
 
 type
   TYakkoArchitectureValidationMetadata = TDictionary<string, string>;
@@ -45,6 +50,12 @@ type
     class function ValidateArchitecture(AKernel: TYakkoRuntimeKernel): TYakkoArchitectureValidationResult; static;
     class function ValidateLifecycle(AKernel: TYakkoRuntimeKernel): TYakkoArchitectureValidationResult; static;
     class function ValidateComposition(AKernel: TYakkoRuntimeKernel): TYakkoArchitectureValidationResult; static;
+    class function ValidateTokenBudget(ABudget: TYakkoTokenBudget): TYakkoArchitectureValidationResult; static;
+    class function ValidateContextOverflow(AWindow: TYakkoContextWindow): TYakkoArchitectureValidationResult; static;
+    class function ValidateMissingTemplate(AKernel: TYakkoRuntimeKernel; const ATemplateName: string): TYakkoArchitectureValidationResult; static;
+    class function ValidateInvalidComposition(ACompositionResult: TYakkoRuntimeCompositionResult): TYakkoArchitectureValidationResult; static;
+    class function ValidateMissingCapability(AItem: TYakkoRegistryItem; ACapability: TYakkoRuntimeCapability): TYakkoArchitectureValidationResult; static;
+    class function ValidateLifecycleTransition(AFromState, AToState: TYakkoRuntimeKernelState): TYakkoArchitectureValidationResult; static;
   end;
 
 implementation
@@ -245,6 +256,134 @@ begin
     AddViolation(Result, 'Pipeline registry is required for composition.');
 
   FinalizeResult(Result, 'composition');
+end;
+
+class function TYakkoRuntimeArchitectureGuards.ValidateTokenBudget(
+  ABudget: TYakkoTokenBudget): TYakkoArchitectureValidationResult;
+begin
+  Result := TYakkoArchitectureValidationResult.Create;
+
+  if not Assigned(ABudget) then
+    AddViolation(Result, 'Token budget must be assigned.')
+  else
+  begin
+    if ABudget.MaxContextTokens <= 0 then
+      AddViolation(Result, 'Token budget max context tokens must be positive.');
+    if ABudget.MaxResponseTokens <= 0 then
+      AddViolation(Result, 'Token budget max response tokens must be positive.');
+    if ABudget.Allocation.TotalAllocated > (ABudget.MaxContextTokens + ABudget.MaxResponseTokens) then
+      AddViolation(Result, 'Token budget allocation exceeds allowed limit.');
+  end;
+
+  FinalizeResult(Result, 'token-budget');
+end;
+
+class function TYakkoRuntimeArchitectureGuards.ValidateContextOverflow(
+  AWindow: TYakkoContextWindow): TYakkoArchitectureValidationResult;
+begin
+  Result := TYakkoArchitectureValidationResult.Create;
+
+  if not Assigned(AWindow) then
+    AddViolation(Result, 'Context window must be assigned.')
+  else
+  begin
+    if AWindow.MaxMessages <= 0 then
+      AddViolation(Result, 'Context window max messages must be positive.');
+    if AWindow.RecentMessages.Count > AWindow.MaxMessages then
+      AddViolation(Result, 'Context window overflow detected.');
+  end;
+
+  FinalizeResult(Result, 'context-window');
+end;
+
+class function TYakkoRuntimeArchitectureGuards.ValidateMissingTemplate(
+  AKernel: TYakkoRuntimeKernel; const ATemplateName: string): TYakkoArchitectureValidationResult;
+var
+  LTemplate: TYakkoRegistryItem;
+begin
+  Result := TYakkoArchitectureValidationResult.Create;
+
+  if not Assigned(AKernel) then
+    AddViolation(Result, 'Kernel must be assigned.')
+  else if not Assigned(AKernel.TemplateRegistry) then
+    AddViolation(Result, 'Template registry must be assigned.')
+  else
+  begin
+    LTemplate := AKernel.TemplateRegistry.FindByName(ATemplateName);
+    try
+      if not Assigned(LTemplate) then
+        AddViolation(Result, Format('Template "%s" is missing.', [ATemplateName]));
+    finally
+      LTemplate.Free;
+    end;
+  end;
+
+  FinalizeResult(Result, 'missing-template');
+end;
+
+class function TYakkoRuntimeArchitectureGuards.ValidateInvalidComposition(
+  ACompositionResult: TYakkoRuntimeCompositionResult): TYakkoArchitectureValidationResult;
+begin
+  Result := TYakkoArchitectureValidationResult.Create;
+
+  if not Assigned(ACompositionResult) then
+    AddViolation(Result, 'Composition result must be assigned.')
+  else if ACompositionResult.Status <> csSuccess then
+    AddViolation(Result, 'Composition result status is not success.');
+
+  FinalizeResult(Result, 'composition-result');
+end;
+
+class function TYakkoRuntimeArchitectureGuards.ValidateMissingCapability(
+  AItem: TYakkoRegistryItem; ACapability: TYakkoRuntimeCapability): TYakkoArchitectureValidationResult;
+var
+  LCaps: string;
+begin
+  Result := TYakkoArchitectureValidationResult.Create;
+
+  if not Assigned(AItem) then
+    AddViolation(Result, 'Registry item must be assigned.')
+  else
+  begin
+    LCaps := '';
+    if Assigned(AItem.Metadata) and AItem.Metadata.ContainsKey('capabilities') then
+      LCaps := LowerCase(AItem.Metadata['capabilities']);
+
+    if Pos(LowerCase(ACapability.ToString), LCaps) = 0 then
+      AddViolation(Result, Format('Item "%s" is missing capability "%s".', [AItem.Name, ACapability.ToString]));
+  end;
+
+  FinalizeResult(Result, 'missing-capability');
+end;
+
+class function TYakkoRuntimeArchitectureGuards.ValidateLifecycleTransition(
+  AFromState, AToState: TYakkoRuntimeKernelState): TYakkoArchitectureValidationResult;
+
+  function IsAllowedTransition(AFrom, ATo: TYakkoRuntimeKernelState): Boolean;
+  begin
+    case AFrom of
+      ksCreated:
+        Result := ATo in [ksInitializing, ksDestroyed];
+      ksInitializing:
+        Result := ATo in [ksReady, ksShuttingDown, ksDestroyed];
+      ksReady:
+        Result := ATo in [ksShuttingDown, ksDestroyed];
+      ksShuttingDown:
+        Result := ATo = ksDestroyed;
+      ksDestroyed:
+        Result := False;
+    else
+      Result := False;
+    end;
+  end;
+
+begin
+  Result := TYakkoArchitectureValidationResult.Create;
+
+  if not IsAllowedTransition(AFromState, AToState) then
+    AddViolation(Result, Format('Invalid lifecycle transition: %s -> %s', [AFromState.ToString, AToState.ToString]));
+
+  FinalizeResult(Result, 'lifecycle-transition');
 end;
 
 end.

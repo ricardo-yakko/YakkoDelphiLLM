@@ -25,6 +25,7 @@ type
     FComponent: string;
     FAction: string;
     FState: string;
+    FDurationMs: Int64;
     FMetadata: TYakkoExecutionTraceMetadata;
   public
     constructor Create;
@@ -38,6 +39,7 @@ type
     property Component: string read FComponent write FComponent;
     property Action: string read FAction write FAction;
     property State: string read FState write FState;
+    property DurationMs: Int64 read FDurationMs write FDurationMs;
     property Metadata: TYakkoExecutionTraceMetadata read FMetadata;
   end;
 
@@ -93,6 +95,7 @@ begin
   FComponent := '';
   FAction := '';
   FState := '';
+  FDurationMs := 0;
   FMetadata := TYakkoExecutionTraceMetadata.Create;
 end;
 
@@ -108,6 +111,7 @@ begin
   FComponent := '';
   FAction := '';
   FState := '';
+  FDurationMs := 0;
   FMetadata.Clear;
 
   { TODO: add deterministic stage ordering indexes for replay planning. }
@@ -121,6 +125,7 @@ begin
     Result.FComponent := FComponent;
     Result.FAction := FAction;
     Result.FState := FState;
+    Result.FDurationMs := FDurationMs;
     CloneStringDictionary(FMetadata, Result.FMetadata);
   except
     Result.Free;
@@ -131,11 +136,12 @@ end;
 function TYakkoExecutionTraceStep.ToDebugString: string;
 begin
   Result := Format(
-    'TYakkoExecutionTraceStep(Component=%s, Action=%s, State=%s, Timestamp=%s, Metadata=%d)',
+    'TYakkoExecutionTraceStep(Component=%s, Action=%s, State=%s, DurationMs=%d, Timestamp=%s, Metadata=%d)',
     [
       FComponent,
       FAction,
       FState,
+      FDurationMs,
       DateTimeToStr(FTimestamp),
       FMetadata.Count
     ]

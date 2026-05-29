@@ -15,9 +15,11 @@ unit Yakko.Inference.Pipeline;
 interface
 
 uses
+  Winapi.Windows,
   System.SysUtils,
   System.Generics.Collections,
-  Yakko.Inference.Types;
+  Yakko.Inference.Types,
+  Yakko.Runtime.Trace;
 
 type
   TYakkoInferenceStage =
@@ -43,8 +45,10 @@ type
     FResult: TYakkoInferenceResult;
     FCurrentStage: TYakkoInferenceStage;
     FMetadata: TYakkoInferencePipelineMetadata;
+    FExecutionTrace: TYakkoExecutionTrace;
     procedure SetRequest(const Value: TYakkoInferenceRequest);
     procedure SetResult(const Value: TYakkoInferenceResult);
+    procedure SetExecutionTrace(const Value: TYakkoExecutionTrace);
   public
     constructor Create;
     destructor Destroy; override;
@@ -56,6 +60,7 @@ type
     property Request: TYakkoInferenceRequest read FRequest write SetRequest;
     property Result: TYakkoInferenceResult read FResult write SetResult;
     property CurrentStage: TYakkoInferenceStage read FCurrentStage write FCurrentStage;
+    property ExecutionTrace: TYakkoExecutionTrace read FExecutionTrace write SetExecutionTrace;
     property Metadata: TYakkoInferencePipelineMetadata read FMetadata;
   end;
 
@@ -191,15 +196,30 @@ begin
   FRequest := TYakkoInferenceRequest.Create;
   FResult := TYakkoInferenceResult.Create;
   FCurrentStage := ipsPreparation;
+  FExecutionTrace := TYakkoExecutionTrace.Create;
   FMetadata := TYakkoInferencePipelineMetadata.Create;
 end;
 
 destructor TYakkoInferencePipelineContext.Destroy;
 begin
   FreeAndNil(FMetadata);
+  FreeAndNil(FExecutionTrace);
   FreeAndNil(FResult);
   FreeAndNil(FRequest);
   inherited;
+end;
+
+procedure TYakkoInferencePipelineContext.SetExecutionTrace(
+  const Value: TYakkoExecutionTrace);
+begin
+  if Value = FExecutionTrace then
+    Exit;
+
+  FreeAndNil(FExecutionTrace);
+  if Assigned(Value) then
+    FExecutionTrace := Value.Clone
+  else
+    FExecutionTrace := TYakkoExecutionTrace.Create;
 end;
 
 procedure TYakkoInferencePipelineContext.SetRequest(
@@ -234,6 +254,7 @@ begin
   FResult.Free;
   FRequest := TYakkoInferenceRequest.Create;
   FResult := TYakkoInferenceResult.Create;
+  FExecutionTrace.Clear;
   FCurrentStage := ipsPreparation;
   FMetadata.Clear;
 
@@ -248,6 +269,7 @@ begin
     Result.SetRequest(FRequest);
     Result.SetResult(FResult);
     Result.FCurrentStage := FCurrentStage;
+    Result.SetExecutionTrace(FExecutionTrace);
     CloneStringDictionary(FMetadata, Result.FMetadata);
   except
     Result.Free;
@@ -258,11 +280,12 @@ end;
 function TYakkoInferencePipelineContext.ToDebugString: string;
 begin
   Result := Format(
-    'TYakkoInferencePipelineContext(CurrentStage=%s, Request=%s, Result=%s, Metadata=%d)',
+    'TYakkoInferencePipelineContext(CurrentStage=%s, Request=%s, Result=%s, ExecutionTrace=%s, Metadata=%d)',
     [
       FCurrentStage.ToString,
       FRequest.ToDebugString,
       FResult.ToDebugString,
+      FExecutionTrace.ToDebugString,
       FMetadata.Count
     ]
   );
@@ -418,6 +441,10 @@ function TYakkoInferencePipeline.Execute(
 var
   LContext: TYakkoInferencePipelineContext;
   LStage: IYakkoInferenceStage;
+  LStageStart: UInt64;
+  LStageDuration: UInt64;
+  LTraceMetadata: TYakkoExecutionTraceMetadata;
+  LStageName: string;
 begin
   if not Assigned(ARequest) then
     raise EArgumentNilException.Create('ARequest must be assigned.');
@@ -429,7 +456,36 @@ begin
     LContext.Metadata.AddOrSetValue('pipeline.mode', 'placeholder');
 
     for LStage in FStages do
+    begin
+      LStageName := LStage.StageType.ToString;
+      LContext.Metadata.AddOrSetValue('pipeline.before_stage', LStageName);
+
+      LTraceMetadata := TYakkoExecutionTraceMetadata.Create;
+      try
+        LTraceMetadata.AddOrSetValue('hook', 'before-stage');
+        LContext.ExecutionTrace.AddSimpleStep('inference-pipeline', 'before-stage', LStageName, LTraceMetadata);
+      finally
+        LTraceMetadata.Free;
+      end;
+
+      LStageStart := GetTickCount64;
       LStage.Execute(LContext);
+      LStageDuration := GetTickCount64 - LStageStart;
+
+      LContext.Metadata.AddOrSetValue('pipeline.after_stage', LStageName);
+      LContext.Metadata.AddOrSetValue('pipeline.stage.' + LStageName + '.duration_ms', IntToStr(Int64(LStageDuration)));
+
+      LTraceMetadata := TYakkoExecutionTraceMetadata.Create;
+      try
+        LTraceMetadata.AddOrSetValue('hook', 'after-stage');
+        LTraceMetadata.AddOrSetValue('duration_ms', IntToStr(Int64(LStageDuration)));
+        LContext.ExecutionTrace.AddSimpleStep('inference-pipeline', 'after-stage', LStageName, LTraceMetadata);
+      finally
+        LTraceMetadata.Free;
+      end;
+    end;
+
+    LContext.Metadata.AddOrSetValue('pipeline.trace', LContext.ExecutionTrace.ToDebugString);
 
     Result := LContext.Result.Clone;
   finally

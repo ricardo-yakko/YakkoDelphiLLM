@@ -20,10 +20,13 @@ uses
   uYakkoLlamaTypes,
   Yakko.Message.LegacyAdapter,
   Yakko.ConversationState,
+  Yakko.Prompt.Document,
   Yakko.Prompt.Builder,
+  Yakko.Prompt.Diff,
   Yakko.Template.Provider,
   Yakko.Inference.Types,
-  Yakko.Generation.Controller;
+  Yakko.Generation.Controller,
+  Yakko.Runtime.Diagnostics;
 
 type
   TYakkoRuntimeBridge = class
@@ -31,6 +34,7 @@ type
     FPromptBuilder: TYakkoPromptBuilder;
     FTemplateProvider: IYakkoTemplateProvider;
     FGenerationController: TYakkoGenerationController;
+    FDiagnostics: TYakkoRuntimeDiagnostics;
   public
     constructor Create;
     destructor Destroy; override;
@@ -50,10 +54,12 @@ begin
   FPromptBuilder := TYakkoPromptBuilder.Create;
   FTemplateProvider := TYakkoTemplateProviderFactory.CreateDefault;
   FGenerationController := TYakkoGenerationController.Create;
+  FDiagnostics := TYakkoRuntimeDiagnostics.Create;
 end;
 
 destructor TYakkoRuntimeBridge.Destroy;
 begin
+  FreeAndNil(FDiagnostics);
   FreeAndNil(FGenerationController);
   FTemplateProvider := nil;
   FreeAndNil(FPromptBuilder);
@@ -68,6 +74,13 @@ var
   LBuildResult: TYakkoPromptBuildResult;
   LInferenceRequest: TYakkoInferenceRequest;
   LSession: TYakkoGenerationSession;
+  LLegacyPromptText: string;
+  LLegacyDocument: TYakkoPromptDocument;
+  LPromptBlock: TYakkoPromptBlock;
+  LMessage: TLlamaMensagem;
+  LPromptDiagnostics: TYakkoRuntimeComparisonResult;
+  LOutputDiagnostics: TYakkoRuntimeComparisonResult;
+  LPromptDiffDiagnostics: TYakkoPromptDiffResult;
 begin
   LConversation := TYakkoConversationState.Create;
   LBuildRequest := TYakkoPromptBuildRequest.Create;
@@ -89,6 +102,62 @@ begin
 
     LBuildResult := FPromptBuilder.Build(LBuildRequest);
     try
+      LLegacyDocument := TYakkoPromptDocument.Create;
+      try
+        if Trim(APromptSistema) <> '' then
+        begin
+          LPromptBlock := TYakkoPromptBlock.Create;
+          LPromptBlock.BlockType := pbtSystem;
+          LPromptBlock.Content := APromptSistema;
+          LLegacyDocument.AddBlock(LPromptBlock);
+        end;
+
+        for LMessage in AMessages do
+        begin
+          LPromptBlock := TYakkoPromptBlock.Create;
+          LPromptBlock.BlockType := pbtConversation;
+          LPromptBlock.Content := LMessage.Conteudo;
+          case LMessage.Role of
+            mrSystem:
+              LPromptBlock.Metadata.AddOrSetValue('role', 'system');
+            mrUser:
+              LPromptBlock.Metadata.AddOrSetValue('role', 'user');
+          else
+            LPromptBlock.Metadata.AddOrSetValue('role', 'assistant');
+          end;
+          LLegacyDocument.AddBlock(LPromptBlock);
+        end;
+
+        if Trim(APromptUsuario) <> '' then
+        begin
+          LPromptBlock := TYakkoPromptBlock.Create;
+          LPromptBlock.BlockType := pbtConversation;
+          LPromptBlock.Content := APromptUsuario;
+          LPromptBlock.Metadata.AddOrSetValue('role', 'user');
+          LLegacyDocument.AddBlock(LPromptBlock);
+        end;
+
+        LLegacyPromptText := FTemplateProvider.BuildPromptDocument(LLegacyDocument);
+
+        LPromptDiagnostics := FDiagnostics.ComparePrompts(LLegacyPromptText, LBuildResult.PromptText);
+        try
+          LPromptDiffDiagnostics := FDiagnostics.ComparePromptDocuments(LLegacyDocument, LBuildResult.PromptDocument);
+          try
+            LInferenceRequest.Metadata.AddOrSetValue('shadow.prompt.equivalent', BoolToStr(LPromptDiagnostics.Status = csEquivalent, True));
+            LInferenceRequest.Metadata.AddOrSetValue('shadow.prompt.divergence', FloatToStr(LPromptDiffDiagnostics.DivergenceScore));
+            LInferenceRequest.Metadata.AddOrSetValue('shadow.prompt.hash', LPromptDiffDiagnostics.PromptHash);
+            LInferenceRequest.Metadata.AddOrSetValue('shadow.prompt.structural_hash', LPromptDiffDiagnostics.StructuralHash);
+          finally
+            LPromptDiffDiagnostics.Free;
+          end;
+        finally
+          FDiagnostics.EmitDiagnostics(LPromptDiagnostics);
+          LPromptDiagnostics.Free;
+        end;
+      finally
+        LLegacyDocument.Free;
+      end;
+
       { PromptDocument -> inference request contract. }
       LInferenceRequest.PromptDocument := LBuildResult.PromptDocument;
       LInferenceRequest.Stream := False;
@@ -99,6 +168,14 @@ begin
       LSession := FGenerationController.StartGeneration(LInferenceRequest);
       try
         Result := LSession.Result.GeneratedText;
+
+        LOutputDiagnostics := FDiagnostics.CompareOutputs(Result, Result);
+        try
+          LOutputDiagnostics.Metadata.AddOrSetValue('shadow.output.mode', 'placeholder-equality');
+          FDiagnostics.EmitDiagnostics(LOutputDiagnostics);
+        finally
+          LOutputDiagnostics.Free;
+        end;
       finally
         LSession.Free;
       end;

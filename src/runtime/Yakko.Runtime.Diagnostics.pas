@@ -22,7 +22,9 @@ uses
   System.SysUtils,
   System.Classes,
   System.Generics.Collections,
-  Winapi.Windows;
+  Winapi.Windows,
+  Yakko.Prompt.Document,
+  Yakko.Prompt.Diff;
 
 type
   TYakkoComparisonStatus =
@@ -110,6 +112,19 @@ type
       const ALegacyOutput: string;
       const AModernOutput: string
     ): TYakkoRuntimeComparisonResult;
+
+    function ComparePromptDocuments(
+      ALegacyPromptDocument: TYakkoPromptDocument;
+      AModernPromptDocument: TYakkoPromptDocument
+    ): TYakkoPromptDiffResult;
+
+    procedure CompareShadowExecution(
+      const ALegacyPrompt, AModernPrompt: string;
+      const ALegacyOutput, AModernOutput: string;
+      APromptDiagnostics: TYakkoRuntimeComparisonResult;
+      AOutputDiagnostics: TYakkoRuntimeComparisonResult;
+      APromptDiffDiagnostics: TYakkoPromptDiffResult
+    );
 
     procedure EmitDiagnostics(AResult: TYakkoRuntimeComparisonResult);
   end;
@@ -367,6 +382,42 @@ begin
     Result.Free;
     raise;
   end;
+end;
+
+function TYakkoRuntimeDiagnostics.ComparePromptDocuments(
+  ALegacyPromptDocument, AModernPromptDocument: TYakkoPromptDocument): TYakkoPromptDiffResult;
+var
+  LDiffEngine: TYakkoPromptDiffEngine;
+begin
+  LDiffEngine := TYakkoPromptDiffEngine.Create;
+  try
+    Result := LDiffEngine.CompareDocuments(ALegacyPromptDocument, AModernPromptDocument);
+  finally
+    LDiffEngine.Free;
+  end;
+end;
+
+procedure TYakkoRuntimeDiagnostics.CompareShadowExecution(
+  const ALegacyPrompt, AModernPrompt, ALegacyOutput, AModernOutput: string;
+  APromptDiagnostics, AOutputDiagnostics: TYakkoRuntimeComparisonResult;
+  APromptDiffDiagnostics: TYakkoPromptDiffResult);
+begin
+  if Assigned(APromptDiagnostics) then
+  begin
+    APromptDiagnostics.LegacyPrompt := ALegacyPrompt;
+    APromptDiagnostics.ModernPrompt := AModernPrompt;
+    APromptDiagnostics.Metadata.AddOrSetValue('shadow.auto', 'true');
+  end;
+
+  if Assigned(AOutputDiagnostics) then
+  begin
+    AOutputDiagnostics.LegacyOutput := ALegacyOutput;
+    AOutputDiagnostics.ModernOutput := AModernOutput;
+    AOutputDiagnostics.Metadata.AddOrSetValue('shadow.auto', 'true');
+  end;
+
+  if Assigned(APromptDiffDiagnostics) then
+    APromptDiffDiagnostics.Metadata.AddOrSetValue('shadow.auto', 'true');
 end;
 
 procedure TYakkoRuntimeDiagnostics.EmitDiagnostics(
