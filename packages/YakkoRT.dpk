@@ -36,6 +36,7 @@ contains
   Yakko.Runtime.Capabilities in '..\src\runtime\Yakko.Runtime.Capabilities.pas',
   Yakko.Runtime.Resolver in '..\src\runtime\Yakko.Runtime.Resolver.pas',
   Yakko.Runtime.Compatibility in '..\src\runtime\Yakko.Runtime.Compatibility.pas',
+  Yakko.Runtime.Composition in '..\src\runtime\Yakko.Runtime.Composition.pas',
   Yakko.Runtime.SpecializedRegistries in '..\src\runtime\Yakko.Runtime.SpecializedRegistries.pas',
   Yakko.Runtime.Policies in '..\src\runtime\Yakko.Runtime.Policies.pas',
   Yakko.Template.Provider in '..\src\runtime\Yakko.Template.Provider.pas',
